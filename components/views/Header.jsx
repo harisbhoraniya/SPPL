@@ -403,9 +403,19 @@ const Navbar = () => {
 																				{child.children ? (
 																					<Accordion type="single" collapsible className="w-full">
 																						<AccordionItem value={child.label} className="border-0">
-																							<AccordionTrigger className="no-underline hover:no-underline py-2 px-2.5 rounded-lg text-sm font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/50 data-[state=open]:text-[#f97316] transition-all">
-																								<span className="flex-1 text-left">{child.label}</span>
-																							</AccordionTrigger>
+																							<div className="flex items-center justify-between rounded-lg hover:bg-orange-50/60 transition-all pr-1">
+																								<Link
+																									href={child.href || "#"}
+																									className="flex-1 text-left py-2 px-2.5 text-sm font-medium text-gray-700 hover:text-[#f97316] transition-colors"
+																									onClick={() => setOpen(false)}
+																								>
+																									{child.label}
+																								</Link>
+																								<AccordionTrigger
+																									className="no-underline hover:no-underline p-2 text-gray-400 hover:text-[#f97316] rounded-md transition-all shrink-0 [&[data-state=open]>svg]:rotate-180"
+																									aria-label={`Toggle ${child.label} items`}
+																								/>
+																							</div>
 																							<AccordionContent className="pb-1 pt-1">
 																								<div className="ml-2.5 pl-2.5 border-l border-gray-200 space-y-0.5 my-1">
 																									{child.children.map((grandchild) => (
