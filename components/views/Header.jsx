@@ -347,12 +347,12 @@ const Navbar = () => {
 							>
 								<Link href="/" onClick={() => setOpen(false)}>
 									<Image
-										src="/img/sppl_logo_orange.png"
+										src="/img/logo sppl.png"
 										loading="eager"
-										width={500}
-										height={325}
+										width={618}
+										height={232}
 										className="h-12 w-auto"
-										alt="SPPL Logo"
+										alt="Logo"
 									/>
 								</Link>
 								<ul className="space-y-4">
