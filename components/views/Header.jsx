@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
@@ -25,6 +26,35 @@ const isTouchDevice = () => {
 };
 
 const Navbar = () => {
+	const pathname = usePathname();
+	const currentPath = (pathname || "/").replace(/\/+$/, "") || "/";
+
+	// Helper to check if a main nav item is active
+	const isNavItemActive = (item) => {
+		if (item.href === "/" || item.href === "") {
+			return currentPath === "/";
+		}
+		if (item.href && item.href !== "#") {
+			return currentPath === item.href || currentPath.startsWith(item.href + "/");
+		}
+		if (item.label === "Products" && (currentPath.startsWith("/products") || currentPath.startsWith("/notBuilt"))) {
+			return true;
+		}
+		return false;
+	};
+
+	// Helper for dropdown / child items
+	const isChildActive = (child) => {
+		if (!child.href || child.href === "#") return false;
+		return currentPath === child.href || currentPath.startsWith(child.href + "/");
+	};
+
+	// Helper for grandchild items
+	const isGrandchildActive = (grandchild) => {
+		if (!grandchild.href) return false;
+		return currentPath === grandchild.href;
+	};
+
 	const [openDropdown, setOpenDropdown] = useState(null);
 	const [openSubDropdown, setOpenSubDropdown] = useState(null);
 	const [open, setOpen] = useState(false); // mobile sheet
@@ -223,7 +253,11 @@ const Navbar = () => {
 									>
 										<Link
 											href={item.href || "#"}
-											className="hover:text-[#f97316] text-[14px] text-wrap flex items-center gap-1"
+											className={`text-[14px] text-wrap flex items-center gap-1 transition-colors ${
+												isNavItemActive(item)
+													? "text-[#f97316] font-semibold"
+													: "text-gray-800 hover:text-[#f97316]"
+											}`}
 											onClick={(e) => {
 												if (isTouch && item.children) e.preventDefault();
 											}}
@@ -232,7 +266,9 @@ const Navbar = () => {
 											{item.children && (
 												<ChevronDown
 													size={14}
-													className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`}
+													className={`transition-transform duration-200 ${
+														openDropdown === item.label ? "rotate-180" : ""
+													} ${isNavItemActive(item) ? "text-[#f97316]" : ""}`}
 												/>
 											)}
 										</Link>
@@ -258,7 +294,11 @@ const Navbar = () => {
 													<div className="flex items-center justify-between">
 														<Link
 															href={child.href || "#"}
-															className="block py-[6px] px-4 hover:text-[#f97316] text-[14px] flex-1"
+															className={`block py-[6px] px-4 text-[14px] flex-1 transition-colors ${
+																isChildActive(child)
+																	? "text-[#f97316] font-semibold bg-orange-50/60"
+																	: "hover:text-[#f97316]"
+															}`}
 															onClick={(e) => {
 																if (isTouch && child.children) {
 																	e.preventDefault();
@@ -304,7 +344,11 @@ const Navbar = () => {
 																<li key={grandchild.label}>
 																	<Link
 																		href={grandchild.href || "#"}
-																		className="block py-[6px] px-4 hover:text-[#f97316] text-[14px]"
+																		className={`block py-[6px] px-4 text-[14px] transition-colors ${
+																			isGrandchildActive(grandchild)
+																				? "text-[#f97316] font-semibold bg-orange-50/60"
+																				: "hover:text-[#f97316]"
+																		}`}
 																	>
 																		{grandchild.label}
 																	</Link>
@@ -377,19 +421,31 @@ const Navbar = () => {
 												{!item.children ? (
 													<Link
 														href={item.href || "#"}
-														className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 active:bg-orange-100/60 transition-all duration-150 group"
+														className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[15px] transition-all duration-150 group ${
+															isNavItemActive(item)
+																? "text-[#f97316] font-semibold bg-orange-50/80 shadow-sm"
+																: "font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 active:bg-orange-100/60"
+														}`}
 														onClick={() => setOpen(false)}
 													>
 														<span>{item.label}</span>
 														<ChevronRight
 															size={15}
-															className="text-gray-400 group-hover:text-[#f97316] group-hover:translate-x-0.5 transition-all"
+															className={`transition-all ${
+																isNavItemActive(item)
+																	? "text-[#f97316] translate-x-0.5"
+																	: "text-gray-400 group-hover:text-[#f97316] group-hover:translate-x-0.5"
+															}`}
 														/>
 													</Link>
 												) : (
 													<Accordion type="single" collapsible className="w-full">
 														<AccordionItem value={item.label} className="border-0">
-															<AccordionTrigger className="no-underline hover:no-underline px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 data-[state=open]:bg-orange-50/80 data-[state=open]:text-[#f97316] transition-all">
+															<AccordionTrigger className={`no-underline hover:no-underline px-3.5 py-2.5 rounded-xl text-[15px] transition-all ${
+																isNavItemActive(item)
+																	? "text-[#f97316] font-semibold bg-orange-50/80 data-[state=open]:bg-orange-50/80 data-[state=open]:text-[#f97316]"
+																	: "font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 data-[state=open]:bg-orange-50/80 data-[state=open]:text-[#f97316]"
+															}`}>
 																<span className="flex-1 text-left">
 																	{item.label}
 																</span>
@@ -406,7 +462,11 @@ const Navbar = () => {
 																							<div className="flex items-center justify-between rounded-lg hover:bg-orange-50/60 transition-all pr-1">
 																								<Link
 																									href={child.href || "#"}
-																									className="flex-1 text-left py-2 px-2.5 text-sm font-medium text-gray-700 hover:text-[#f97316] transition-colors"
+																									className={`flex-1 text-left py-2 px-2.5 text-sm transition-colors ${
+																										isChildActive(child)
+																											? "text-[#f97316] font-semibold"
+																											: "font-medium text-gray-700 hover:text-[#f97316]"
+																									}`}
 																									onClick={() => setOpen(false)}
 																								>
 																									{child.label}
@@ -422,10 +482,20 @@ const Navbar = () => {
 																										<Link
 																											key={grandchild.label}
 																											href={grandchild.href || "#"}
-																											className="flex items-center gap-2 text-[13px] text-gray-600 hover:text-[#f97316] py-1.5 px-2.5 rounded-md hover:bg-orange-50/40 transition-all group/item"
+																											className={`flex items-center gap-2 text-[13px] py-1.5 px-2.5 rounded-md transition-all group/item ${
+																												isGrandchildActive(grandchild)
+																													? "text-[#f97316] font-semibold bg-orange-50/60"
+																													: "text-gray-600 hover:text-[#f97316] hover:bg-orange-50/40"
+																											}`}
 																											onClick={() => setOpen(false)}
 																										>
-																											<span className="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover/item:bg-[#f97316] group-hover/item:scale-125 transition-all" />
+																											<span
+																												className={`w-1.5 h-1.5 rounded-full transition-all ${
+																													isGrandchildActive(grandchild)
+																														? "bg-[#f97316] scale-125"
+																														: "bg-gray-300 group-hover/item:bg-[#f97316] group-hover/item:scale-125"
+																												}`}
+																											/>
 																											<span className="group-hover/item:translate-x-0.5 transition-transform">
 																												{grandchild.label}
 																											</span>
@@ -438,7 +508,11 @@ const Navbar = () => {
 																				) : (
 																					<Link
 																						href={child.href || "#"}
-																						className="block text-sm font-medium text-gray-700 hover:text-[#f97316] py-2 px-2.5 rounded-lg hover:bg-orange-50/50 transition-all"
+																						className={`block text-sm py-2 px-2.5 rounded-lg transition-all ${
+																							isChildActive(child)
+																								? "text-[#f97316] font-semibold bg-orange-50"
+																								: "font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/50"
+																						}`}
 																						onClick={() => setOpen(false)}
 																					>
 																						{child.label}
