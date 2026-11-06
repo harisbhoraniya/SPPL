@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import {
 	Accordion,
 	AccordionItem,
@@ -345,6 +345,7 @@ const Navbar = () => {
 								side="right"
 								className="p-4 bg-white text-black h-screen overflow-auto space-y-4 w-[300px] sm:w-[350px]"
 							>
+								<SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
 								<Link href="/" onClick={() => setOpen(false)}>
 									<Image
 										src="/img/logo sppl.png"
