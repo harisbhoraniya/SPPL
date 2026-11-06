@@ -65,6 +65,9 @@ const raleway = Raleway({
 });
 
 export const metadata = {
+	metadataBase: new URL(
+		process.env.NEXT_PUBLIC_SITE_URL || "https://sppl-psi.vercel.app"
+	),
 	title: "Safety Projects | Engineering Fall Protection Solutions",
 	description:
 		"Saving lives at height with world-class fall protection. From engineered lifelines to construction safety systems — we make high-risk work safer, smarter, stronger.",
@@ -83,12 +86,12 @@ export const metadata = {
 		title: "Safety Projects Pvt. Ltd.",
 		description:
 			"Leading provider of industrial safety and stainless steel solutions. Over 30 years of experience in protecting lives through innovation.",
-		url: "https://safetyprojects.co.in",
+		url: "https://sppl-psi.vercel.app",
 		siteName: "Safety Projects Pvt. Ltd.",
 		type: "website",
 		images: [
 			{
-				url: "https://safetyprojects.co.in/img/logo%20sppl.png",
+				url: "/img/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Safety Projects Pvt. Ltd. - Industrial Safety Solutions",
@@ -102,7 +105,7 @@ export const metadata = {
 			"Leading provider of industrial safety and stainless steel solutions. Over 30 years of experience in protecting lives through innovation.",
 		images: [
 			{
-				url: "https://safetyprojects.co.in/img/logo%20sppl.png",
+				url: "/img/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Safety Projects Pvt. Ltd. - Industrial Safety Solutions",
