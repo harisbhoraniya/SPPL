@@ -1,0 +1,2258 @@
+// "use client";
+// import Image from "next/image";
+// import { BodyCopyText } from "@/components/views/BodyCopyText";
+// import { HeaderText } from "@/components/views/HeaderText";
+// import MainPage from "@/components/views/MainPage";
+// import ContainerSection from "@/components/views/ContainerSection";
+// import { motion, AnimatePresence } from "framer-motion";
+// import BannerImage from "@/components/views/BannerImage";
+// import { useState } from "react";
+
+// const fadeUp = {
+//   initial: { opacity: 0, y: 40 },
+//   animate: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+// };
+// const fadeIn = {
+//   initial: { opacity: 0 },
+//   animate: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+// };
+
+// const tabs = [
+//   { id: 1, label: "Fall Protection" },
+//   { id: 2, label: "Roof Integrity" },
+//   { id: 3, label: "Structural Load Anaylsis" },
+// ];
+
+// // Tab 1 component with its own layout/design
+// function Tab1Content() {
+//   return (
+//     <div className="grid grid-cols-12 gap-4 items-start">
+//       <div className="col-span-12 md:col-span-6 lg:col-span-5  flex justify-center md:justify-start">
+//         <Image
+//           src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360 angle.jpg`}
+//           alt="Fixed Lifeline System"
+//           width={1000}
+//           height={1000}
+//           className="w-full h-auto object-contain rounded-sm"
+//         />
+//       </div>
+//       <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//         <HeaderText className="text-left mb-[25px]">Fall Protection From <span className="text-[#d42225]">Any Angle</span></HeaderText>
+//         <BodyCopyText className="space-y-4 w-full text-left">
+//           Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures that the forces are dissipated protecting the user and the roof structure. This is crucial because falls can occur in various orientations, and the anchor needs to be effective regardless of the fall angle.
+//         </BodyCopyText>
+//       </div>
+//     </div>
+//   );
+// }
+
+// // Tab 2 component customized independently
+// function Tab2Content() {
+//   return (
+//     <div>
+//       <div className="hidden md:grid grid-cols-12 gap-4 items-start">
+//         <div className="col-span-12 md:col-span-6 lg:col-span-5  flex flex-col justify-center md:justify-start space-y-4">
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#d42225]">
+//               Ordinary engineering leads to high stresses on sub-structures
+//             </BodyCopyText>
+//           </div>
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#489949]">
+//               Our DecoTECH Energy Dissipating Technology ensures negligible impact on sub-structures
+//             </BodyCopyText>
+//           </div>
+//         </div>
+//         <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//           <HeaderText className="text-left mb-[25px]">Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span></HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology. This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles – be they old or new. This versatility enhances safety and minimizes the risk to the structural integrity of the roof.
+//           </BodyCopyText>
+//         </div>
+//       </div>
+//       <div className="grid grid-cols-12 md:hidden gap-4 items-start ">
+//         <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//           <HeaderText className="text-left mb-[25px]">Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span></HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology. This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles – be they old or new. This versatility enhances safety and minimizes the risk to the structural integrity of the roof.
+//           </BodyCopyText>
+//         </div>
+//         <div className="col-span-12 md:col-span-6 lg:col-span-5  flex flex-col justify-center md:justify-start space-y-4">
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#d42225]">
+//               Ordinary engineering leads to high stresses on sub-structures
+//             </BodyCopyText>
+//           </div>
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#489949]">
+//               Our DecoTECH Energy Dissipating Technology ensures negligible impact on sub-structures
+//             </BodyCopyText>
+//           </div>
+//         </div>
+
+//       </div>
+//     </div>
+//   );
+// }
+
+// // Tab 3 component with another unique layout
+// function Tab3Content() {
+//   return (
+//     <div className="grid grid-cols-12 gap-4 items-start">
+//       <div className="col-span-12 md:col-span-6 lg:col-span-5  flex justify-center md:justify-start">
+//         <Image
+//           src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg`}
+//           alt="Fixed Lifeline System"
+//           width={1000}
+//           height={1000}
+//           className="w-full h-auto object-contain rounded-sm"
+//         />
+//       </div>
+//       <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//         <HeaderText className="text-left mb-[25px]">Structural Load Anaylsis</HeaderText>
+//         <BodyCopyText className="space-y-4 w-full text-left">
+//           When a fall happens on a lifeline system, the force travels directly into the roof structure. This is where the difference between DecoTECH and traditional competitor roof posts becomes critical. In a fall, competitor posts create a sudden force spike of 10–12 kN, far above the safe limit the roof sheet and purlins can withstand. This violent impact travels straight into the structure, increasing the risk of sheet tearing, deformation, or fastener failure. DecoTECH, on the other hand, keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated—protecting the roof, preserving the sub-structure, and ensuring the worker’s safety in one seamless response.
+//         </BodyCopyText>
+//       </div>
+//     </div>
+//   );
+// }
+
+// const Feature = [
+//   {
+//     name: "360-degree energy dissipation",
+//     desc: "",
+//   },
+//   {
+//     name: "Maintains integrity of structure",
+//     desc: "",
+//   },
+//   {
+//     name: "Absorbs forces & brings them down to less than 6 KN",
+//     desc: "",
+//   },
+//   {
+//     name: "Tested & compliant for multi-user protection",
+//     desc: "",
+//   },
+//   {
+//     name: "Worry free rooftop experience",
+//     desc: "",
+//   }
+// ]
+
+// export default function DecotechPage() {
+//   const [hoverIndex, setHoverIndex] = useState(null);
+//   const [activeTab, setActiveTab] = useState(1);
+
+//   // Render tab content based on activeTab state
+//   function renderActiveTabContent() {
+//     switch (activeTab) {
+//       case 1:
+//         return <Tab1Content />;
+//       case 2:
+//         return <Tab2Content />;
+//       case 3:
+//         return <Tab3Content />;
+//       default:
+//         return null;
+//     }
+//   }
+//   return (
+//     <MainPage className="">
+//       <BannerImage
+//         image="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Banner.jpg"
+//       // mobileImage={`https://placehold.co/600x400?text=Decotech Image`}
+//         text={`DecoTECH`}
+//       />
+//       <ContainerSection>
+//         <div className="">
+//           <p className="text-[#d42225] text-sm opacity-60 font-normal drop-shadow-lg mb-[10px]">
+//             Distinctive Innovation
+//           </p>
+//           <HeaderText className="text-left mb-[25px]">DecoTECH Energy Dissipating Technology</HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof and protecting individuals working at heights.
+//           </BodyCopyText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             Our posts typically consist of a sturdy structure that can securely anchor a worker’s fall protection device, and they incorporate force absorbing and dissipating mechanisms.
+//           </BodyCopyText>
+//         </div>
+//         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 overflow-hidden">
+//           {Feature.map((feature, index) => (
+//             <div
+//               key={index}
+//               onMouseEnter={() => setHoverIndex(index)}
+//               onMouseLeave={() => setHoverIndex(null)}
+//               className="
+//                       cursor-pointer flex flex-col items-center justify-center text-center align-middle
+//                       p-4 h-40
+//                       border-r border-opacity-5
+//                       transition-colors duration-300 ease-in-out
+//                     "
+//               style={{ minHeight: '6rem' }}
+//             >
+//               <motion.div
+//                 layout
+//                 initial={{ y: 0, color: "#000" }}
+//                 animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                 transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                 className="text-[14px] z-10 pointer-events-none"
+//               >
+//                 {feature.name}
+//               </motion.div>
+//             </div>
+//           ))}
+//         </div> */}
+//         <div className="block md:hidden space-y-8">
+//           {Feature.map((feature, index) => (
+//             <div key={index}
+//               onMouseEnter={() => setHoverIndex(index)}
+//               onMouseLeave={() => setHoverIndex(null)}
+//               className="border-b border-black border-opacity-20 pb-6 last:border-b-0 cursor-pointer ">
+//               <motion.div
+//                 layout
+//                 initial={{ y: 0, color: "#000" }}
+//                 animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                 transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                 className="text-[14px] z-10 pointer-events-none text-center "
+//               >
+//                 {feature.name}
+//               </motion.div>
+//             </div>
+//           ))}
+//         </div>
+
+
+//         <div className="hidden md:block">
+//           <div className="flex flex-wrap divide-x divide-black divide-opacity-20 ">
+//             {Feature.map((feature, index) => (
+//               <div
+//                 onMouseEnter={() => setHoverIndex(index)}
+//                 onMouseLeave={() => setHoverIndex(null)}
+//                 key={index}
+//                 className={`w-[20%] px-4 border-b p-4 cursor-pointer flex flex-col items-center justify-center text-center align-middle h-40
+//                                 ${index > 3 - 4 ? "border-b-0" : ""} 
+//                                 ${(index + 1) % 4 === 0 ? "border-r-0" : ""}`}
+//               >
+//                 <motion.div
+//                   layout
+//                   initial={{ y: 0, color: "#000" }}
+//                   animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                   transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                   className="text-[14px] z-10 pointer-events-none"
+//                 >
+//                   {feature.name}
+//                 </motion.div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//         <div className="w-full max-w-4xl mx-auto p-4">
+//           <div className="flex border-b border-gray-300 relative">
+//             {tabs.map((tab) => (
+//               <div
+//                 key={tab.id}
+//                 className={`cursor-pointer flex-1 text-center py-3 font-medium ${activeTab === tab.id ? "text-[#d42225]" : "text-gray-600"
+//                   }`}
+//                 onClick={() => setActiveTab(tab.id)}
+//               >
+//                 {tab.label}
+//               </div>
+//             ))}
+//             <motion.div
+//               layoutId="underline"
+//               className="absolute bottom-0 h-1 bg-red-600 rounded"
+//               style={{
+//                 width: `calc(100% / ${tabs.length})`,
+//                 left: `calc((100% / ${tabs.length}) * ${activeTab - 1})`,
+//               }}
+//               transition={{ type: "spring", stiffness: 300, damping: 30 }}
+//             />
+//           </div>
+//         </div>
+//         <div className="mt-6 min-h-[8rem]">
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={activeTab}
+//               initial={{ opacity: 0, y: 10 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -10 }}
+//               transition={{ duration: 0.3 }}
+//               className=""
+//             >
+//               {renderActiveTabContent()}
+//             </motion.div>
+//           </AnimatePresence>
+//         </div>
+//       </ContainerSection>
+//     </MainPage>
+//   );
+// }
+
+
+// "use client";
+// import Image from "next/image";
+// import { BodyCopyText } from "@/components/views/BodyCopyText";
+// import { HeaderText } from "@/components/views/HeaderText";
+// import MainPage from "@/components/views/MainPage";
+// import ContainerSection from "@/components/views/ContainerSection";
+// import BannerImage from "@/components/views/BannerImage";
+
+// const Feature = [
+//   { name: "360-degree energy dissipation" },
+//   { name: "Maintains integrity of structure" },
+//   { name: "Absorbs forces & brings them down to less than 6 KN" },
+//   { name: "Tested & compliant for multi-user protection" },
+//   { name: "Worry free rooftop experience" }
+// ];
+
+// export default function DecotechPage() {
+//   return (
+//     <MainPage className="">
+//       <BannerImage
+//         image="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Banner.jpg"
+//         text={`DecoTECH`}
+//       />
+//       <ContainerSection>
+
+//         {/* SECTION 1: Distinctive Innovation (Image Left, Features/Text Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-center mb-20">
+//           {/* Green Area: Image */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-5 flex justify-center md:justify-start">
+//             <div className="w-full relative bg-green-50 rounded-sm overflow-hidden">
+//               {/* Using placeholder as main image wasn't specified for this exact section, utilizing banner logic or generic */}
+//               <Image
+//                 src="https://placehold.co/600x600/e0ffe0/000000?text=Distinctive+Innovation+(Image)"
+//                 alt="Distinctive Innovation"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-cover"
+//               />
+//             </div>
+//           </div>
+
+//           {/* Text Area */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-8">
+//             <p className="text-[#d42225] text-sm opacity-60 font-normal drop-shadow-lg mb-[10px]">
+//               Distinctive Innovation
+//             </p>
+//             <HeaderText className="text-left mb-[25px]">
+//               Our roof anchors are designed to enhance fall protection
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left mb-6">
+//               Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof.
+//             </BodyCopyText>
+
+//             {/* Feature List embedded here as per wireframe */}
+//             <ul className="space-y-2">
+//               {Feature.map((feature, index) => (
+//                 <li key={index} className="flex items-start text-sm font-medium text-gray-800">
+//                   <span className="mr-2 text-[#d42225]">•</span>
+//                   {feature.name}
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* SECTION 2: Fall Protection (Image Left, Text Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-center mb-20 border-t pt-10 border-gray-100">
+//           {/* Green Area: Image */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-5 flex justify-center md:justify-start">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360 angle.jpg`}
+//               alt="Fall Protection"
+//               width={1000}
+//               height={1000}
+//               className="w-full h-auto object-contain rounded-sm bg-green-50"
+//             />
+//           </div>
+
+//           {/* Text Area */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//             <HeaderText className="text-left mb-[25px]">
+//               Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900">
+//               Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures safety.
+//             </BodyCopyText>
+//             <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//               Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures that the forces are dissipated protecting the user and the roof structure.
+//             </BodyCopyText>
+//           </div>
+//         </div>
+
+//         {/* SECTION 3: Roof Integrity (Text Left, Two Images Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-start mb-20 border-t pt-10 border-gray-100">
+//           {/* Text Area (Left) */}
+//           <div className="col-span-12 md:col-span-5">
+//             <HeaderText className="text-left mb-[25px]">
+//               Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span>
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left font-bold">
+//               In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology.
+//             </BodyCopyText>
+//             <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//               This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles.
+//             </BodyCopyText>
+//           </div>
+
+//           {/* Two Green Images (Right) */}
+//           <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-4">
+//             <div className="flex flex-col gap-2">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//                 alt="High Stress"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//               <p className="text-xs text-[#d42225] font-semibold">Ordinary engineering</p>
+//             </div>
+//             <div className="flex flex-col gap-2">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//                 alt="DecoTECH"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//               <p className="text-xs text-[#489949] font-semibold">DecoTECH Technology</p>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* SECTION 4: Structural Load Analysis (Videos Top, Image Left/Text Right Bottom) */}
+//         <div className="mb-10 border-t pt-10 border-gray-100">
+//           <div className="text-center md:text-left mb-8">
+//             <HeaderText className="text-left mb-[25px]">Structural Load Analysis</HeaderText>
+//           </div>
+
+//           {/* Yellow Area: Two Videos Side by Side */}
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+//             <div className="w-full aspect-video bg-yellow-100 flex items-center justify-center rounded-sm relative overflow-hidden">
+//               {/* Placeholder for Video 1 */}
+//               <video className="w-full h-full object-cover" controls poster="https://placehold.co/600x400/fff9c4/000000?text=Video+1+Placeholder">
+//                 <source src="movie.mp4" type="video/mp4" />
+//                 Your browser does not support the video tag.
+//               </video>
+//             </div>
+//             <div className="w-full aspect-video bg-yellow-100 flex items-center justify-center rounded-sm relative overflow-hidden">
+//               {/* Placeholder for Video 2 */}
+//               <video className="w-full h-full object-cover" controls poster="https://placehold.co/600x400/fff9c4/000000?text=Video+2+Placeholder">
+//                 <source src="movie.mp4" type="video/mp4" />
+//                 Your browser does not support the video tag.
+//               </video>
+//             </div>
+//           </div>
+
+//           {/* Bottom Row: Green Image Left, Text Right */}
+//           <div className="grid grid-cols-12 gap-8 items-center">
+//             <div className="col-span-12 md:col-span-6 lg:col-span-5">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg`}
+//                 alt="Load Analysis"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//             </div>
+//             <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//               <BodyCopyText className="space-y-4 w-full text-left font-bold">
+//                 When a fall happens on a lifeline system, the force travels directly into the roof structure.
+//               </BodyCopyText>
+//               <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//                 DecoTECH keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated.
+//               </BodyCopyText>
+//             </div>
+//           </div>
+//         </div>
+
+//       </ContainerSection>
+//     </MainPage>
+//   );
+// }
+
+"use client";
+import Image from "next/image";
+import { BodyCopyText } from "@/components/views/BodyCopyText";
+import { HeaderText } from "@/components/views/HeaderText";
+import MainPage from "@/components/views/MainPage";
+import ContainerSection from "@/components/views/ContainerSection";
+import { motion } from "framer-motion";
+import { container, containerLeft, fadeLeft, fadeUp } from "../_components/fadeUp";
+// --- CUSTOM VIEWPORT CONFIGURATION ---
+// You can adjust these pixel values to control when the layout switches
+// from mobile (stacked) to desktop (overlay).
+const customBreakpoints = {
+  desktop: "min-[1024px]", // Triggers the side-by-side/overlay view
+};
+
+const Feature = [
+  { name: "360-degree energy dissipation" },
+  { name: "Maintains integrity of structure" },
+  { name: "Absorbs forces & brings them down to less than 6 KN" },
+  { name: "Tested & compliant for multi-user protection" },
+  { name: "Worry free rooftop experience" }
+];
+
+export default function DecotechPage() {
+  return (
+    <MainPage className="mb-0">
+
+
+      {/* <div className="relative w-full min-h-[650px] flex items-center py-12 md:py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider.jpg"
+            alt="Distinctive Innovation Background"
+            fill
+            priority={true}
+            className="object-cover object-center"
+          />
+        </div>
+        <ContainerSection className="relative z-10 w-full h-full pointer-events-none ">
+          <div className={`grid grid-cols-1 md:grid-cols-12 h-full items-center `}>
+            <div className={`hidden md:block col-span-8`}></div>
+            <div className={`col-span-1 md:col-span-4 pointer-events-auto `}>
+              <div className="text-center">
+                <p className="text-[#d42225] text-sm opacity-80 font-bold uppercase tracking-wide mb-3">
+                  Distinctive Innovation
+                </p>
+                <HeaderText className="text-left mb-5 text-gray-900">
+                  Our roof anchors are designed to enhance fall protection
+                </HeaderText>
+                <BodyCopyText className="space-y-4 w-full text-left mb-6 text-gray-800">
+                  Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof.
+                </BodyCopyText>
+                <ul className="space-y-3">
+                  {Feature.map((feature, index) => (
+                    <li key={index} className="flex items-start text-sm font-semibold text-gray-800">
+                      <span className="mr-3 text-[#d42225] text-lg leading-none">•</span>
+                      {feature.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ContainerSection>
+      </div>
+      <div className="relative w-full min-h-[780px] flex items-center overflow-hidden -mt-[130px]">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider 01.jpg"
+            alt="Distinctive Innovation Background"
+            fill
+            priority={true}
+            className="object-cover object-center "
+          />
+
+        </div>
+        <ContainerSection className="relative z-10 w-full h-full pointer-events-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-24">
+            <div className="flex justify-center md:justify-start">
+              <div className="rounded-sm w-full">
+                
+              </div>
+            </div>
+
+            <div className="lg:px-8">
+              <HeaderText className="text-left mb-[25px]">
+                Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+              </HeaderText>
+              <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900 text-lg">
+                Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures safety.
+              </BodyCopyText>
+              <BodyCopyText className="space-y-4 w-full text-left mt-4">
+                This is crucial because falls can occur in various orientations, and the anchor needs to be effective regardless of the fall angle, protecting both the user and the roof structure.
+              </BodyCopyText>
+            </div>
+          </div>
+        </ContainerSection>
+      </div> */}
+
+      <div className="relative w-full flex items-center overflow-hidden">
+
+        {/* Background Image */}
+        <div className="w-full relative z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider.jpg"
+            alt="Distinctive Innovation Background"
+            width={1920}
+            height={900}
+            priority
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <ContainerSection className="absolute inset-0 z-10 w-full h-full pointer-events-none -ml-2 md:-ml-8 lg:-ml-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 h-full items-center">
+
+            {/* LEFT SPACE (product image area) */}
+            <div className="hidden md:block md:col-span-7" />
+
+            {/* RIGHT TEXT AREA */}
+            <motion.div
+              className="md:col-span-5 justify-self-end pr-6 lg:pr-16 pointer-events-auto"
+              variants={containerLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+            >
+
+              <div className="text-left w-[520px]">
+
+                {/* LOGO */}
+                <motion.div variants={fadeLeft} className="mb-4">
+                  <Image
+                    src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/LOGOS.png"
+                    alt="SAFE PRO"
+                    width={160}
+                    height={40}
+                    className="w-[150px] h-auto"
+                    priority
+                  />
+                </motion.div>
+
+                {/* HEADING */}
+                <motion.h2
+                  variants={fadeLeft}
+                  className="text-[42px] md:text-[38px] leading-[1.1] font-extrabold text-[#111827] mb-2"
+                >
+                  Distinctive<br />Innovation
+                </motion.h2>
+
+                {/* SUB HEADING */}
+                <motion.h3
+                  variants={fadeLeft}
+                  className="text-[32px] md:text-[36px] leading-[1.2] font-medium text-[#1f2937] mb-6"
+                >
+                  DecoTECH Energy<br />
+                  Dissipating Technology
+                </motion.h3>
+
+                {/* PARAGRAPHS */}
+                <motion.div variants={fadeLeft} className="space-y-4 mb-6">
+                  <p className="text-[13px] md:text-[14px] leading-relaxed text-[#374151]">
+                    Our roof anchors are designed to enhance fall protection systems on
+                    roofs by dissipating and reducing the forces generated during a fall.
+                    These anchors are crucial for maintaining the structural integrity of the roof.
+                  </p>
+
+                  <p className="text-[13px] md:text-[14px] leading-relaxed text-[#374151]">
+                    Our posts typically consist of a sturdy structure that can securely
+                    anchor a worker's fall protection device, and they incorporate force
+                    absorbing and dissipating mechanisms.
+                  </p>
+                </motion.div>
+
+                {/* BULLETS */}
+                <motion.ul
+                  variants={fadeLeft}
+                  className="space-y-2.5 text-[13px] md:text-[14px] text-[#111827] font-medium"
+                >
+                  {Feature.map((feature, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="mr-3 text-[#d42225] text-base leading-none mt-0.5">•</span>
+                      <span className="flex-1">{feature.name}</span>
+                    </li>
+                  ))}
+                </motion.ul>
+
+              </div>
+            </motion.div>
+
+
+          </div>
+        </ContainerSection>
+
+      </div>
+
+
+
+      {/* ================= SECTION 2: FALL PROTECTION ================= */}
+      {/* Keeping the negative margin as requested to pull it up, but using aspect ratio image */}
+      <div className="relative w-full flex items-center overflow-hidden lg:-mt-[130px] z-20">
+
+        {/* Background Image */}
+        <div className="w-full relative z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider 01.jpg"
+            alt="Fall Protection Background"
+            width={1920}
+            height={900}
+            priority
+            className="w-full h-auto block object-cover"
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <ContainerSection className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+          <div className="h-full w-full flex flex-col justify-end pb-8 md:pb-0 md:justify-center">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+              {/* Left Spacer */}
+              <div className="hidden md:flex justify-center md:justify-start">
+                <div className="w-full h-32"></div>
+              </div>
+
+              {/* Right Column (Animated Text) */}
+              <motion.div
+                className="lg:px-8 pointer-events-auto"
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.4 }}
+              >
+
+                <motion.div variants={fadeUp}>
+                  <HeaderText className="text-left mb-[25px]">
+                    Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+                  </HeaderText>
+                </motion.div>
+
+                <motion.div variants={fadeUp}>
+                  <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900 text-lg">
+                    Regardless of the direction or angle from which a fall occurs, the
+                    360-degree energy dissipating deploying feature ensures safety.
+                  </BodyCopyText>
+                </motion.div>
+
+                <motion.div variants={fadeUp}>
+                  <BodyCopyText className="space-y-4 w-full text-left mt-4 text-gray-800">
+                    This is crucial because falls can occur in various orientations,
+                    and the anchor needs to be effective regardless of the fall angle.
+                  </BodyCopyText>
+                </motion.div>
+
+              </motion.div>
+
+            </div>
+          </div>
+        </ContainerSection>
+      </div>
+
+      {/* <ContainerSection className="">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-24">
+          <div className="flex justify-center md:justify-start">
+            <div className="rounded-sm w-full">
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360 angle.jpg"
+                alt="Fall Protection"
+                width={1000}
+                height={1000}
+                className="w-full h-auto object-contain rounded-sm mix-blend-multiply"
+              />
+            </div>
+          </div>
+
+          <div className="lg:px-8">
+            <HeaderText className="text-left mb-[25px]">
+              Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+            </HeaderText>
+            <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900 text-lg">
+              Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures safety.
+            </BodyCopyText>
+            <BodyCopyText className="space-y-4 w-full text-left mt-4">
+              This is crucial because falls can occur in various orientations, and the anchor needs to be effective regardless of the fall angle, protecting both the user and the roof structure.
+            </BodyCopyText>
+          </div>
+        </div>
+      </ContainerSection> */}
+
+
+      <div className="relative w-full flex items-center overflow-hidden lg:-mt-[150px] z-20">
+
+        {/* Background Image */}
+        <div className="w-full relative z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider 02.jpg"
+            alt="Roof Integrity Background"
+            width={1920}
+            height={900}
+            priority
+            className="w-full h-auto block object-cover"
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <ContainerSection className="absolute inset-0 z-10 w-full h-full pointer-events-none">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 justify-center items-center h-full">
+
+            {/* LEFT TEXT AREA (Animated) */}
+            <motion.div
+              className="md:col-span-5 pointer-events-auto"
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+            >
+
+              <motion.div variants={fadeUp}>
+                <HeaderText className="text-left mb-[25px]">
+                  Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span>
+                </HeaderText>
+              </motion.div>
+
+              <motion.div variants={fadeUp}>
+                <BodyCopyText className="space-y-4 w-full text-left font-bold text-lg">
+                  In case of a fall, our anchor activates its innovative DecoTECH Energy
+                  Dissipating Technology.
+                </BodyCopyText>
+              </motion.div>
+
+              <motion.div variants={fadeUp}>
+                <BodyCopyText className="space-y-4 w-full text-left mt-4">
+                  This technology effectively absorbs and dissipates forces, ensuring
+                  that the impact on the roof structure is minimal, reducing it to less
+                  than 6 kN. This impressive force reduction makes our anchor suitable
+                  for installation on various roof profiles – be they old or new.
+                </BodyCopyText>
+              </motion.div>
+
+            </motion.div>
+
+            {/* RIGHT COMPARISON TEXTS (Animated) */}
+            <motion.div
+              className="md:col-span-7 grid grid-cols-2 gap-4 pointer-events-auto"
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+            >
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-2 rounded-sm">
+                <p className="text-sm text-[#d42225] font-bold mt-2 text-center">
+                  Ordinary engineering leads to high stresses
+                </p>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="flex flex-col gap-2 rounded-sm">
+                <p className="text-sm text-[#489949] font-bold mt-2 text-center">
+                  DecoTECH ensures negligible impact
+                </p>
+              </motion.div>
+
+            </motion.div>
+
+          </div>
+        </ContainerSection>
+      </div>
+      {/* <ContainerSection className="">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start ">
+
+          <div className="md:col-span-5">
+            <HeaderText className="text-left mb-[25px]">
+              Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span>
+            </HeaderText>
+            <BodyCopyText className="space-y-4 w-full text-left font-bold text-lg">
+              In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology.
+            </BodyCopyText>
+            <BodyCopyText className="space-y-4 w-full text-left mt-4">
+              This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles – be they old or new.
+            </BodyCopyText>
+          </div>
+
+          <div className="md:col-span-7 grid grid-cols-2 gap-4">
+            <div className="flex flex-col gap-2 rounded-sm">
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg"
+                alt="High Stress Ordinary Engineering"
+                width={1000}
+                height={1000}
+                className="w-full h-auto object-contain rounded-sm mix-blend-multiply"
+              />
+              <p className="text-sm text-[#d42225] font-bold mt-2 text-center">Ordinary engineering leads to high stresses</p>
+            </div>
+            <div className="flex flex-col gap-2 rounded-sm">
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg"
+                alt="DecoTECH Technology"
+                width={1000}
+                height={1000}
+                className="w-full h-auto object-contain rounded-sm mix-blend-multiply"
+              />
+              <p className="text-sm text-[#489949] font-bold mt-2 text-center">DecoTECH ensures negligible impact</p>
+            </div>
+          </div>
+        </div>
+
+      </ContainerSection> */}
+      {/* SECTION 4: Structural Load Analysis (Videos Top, Image Left/Text Right Bottom) */}
+
+      <div className="relative w-full flex items-center overflow-hidden lg:-mt-[130px] z-20">
+
+        {/* 1. Background Image (Original Size) */}
+        <div className="w-full relative z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider 03.jpg"
+            alt="Fall Protection Background"
+            width={1920} // Update to actual image width
+            height={1000} // Update to actual image height
+            priority={true}
+            className="w-full h-auto block object-cover"
+          />
+        </div>
+
+        {/* 2. Content Overlay */}
+        <ContainerSection className="absolute inset-0 z-10 w-full h-full pointer-events-none ">
+          <div className="">
+
+            <HeaderText className="mb-[25px]">Structural Load Analysis</HeaderText>
+
+
+            {/* Yellow Area: Two Videos Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+              <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm flex items-center justify-center rounded-sm relative overflow-hidden group">
+                {/* Placeholder for Video 1 (Yellow) */}
+                <video className="w-full h-full object-cover relative z-10" controls poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+1+Placeholder">
+                  <source src="movie.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm flex items-center justify-center rounded-sm relative overflow-hidden group">
+                {/* Placeholder for Video 2 (Yellow) */}
+                <video className="w-full h-full object-cover relative z-10" controls poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+2+Placeholder">
+                  <source src="movie.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            {/* Bottom Row: Green Image Left, Text Right */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+              <div className="rounded-sm">
+                <Image
+                  src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg"
+                  alt="Load Analysis Graph"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-auto object-contain rounded-sm mix-blend-multiply"
+                />
+              </div>
+
+              <BodyCopyText className="space-y-4 w-full text-left text-white">
+                When a fall happens on a lifeline system, the force travels directly into the roof structure. This is where the difference between DecoTECH and traditional competitor roof posts becomes critical. In a fall, competitor posts create a sudden force spike of 10–12 kN, far above the safe limit the roof sheet and purlins can withstand. This violent impact travels straight into the structure, increasing the risk of sheet tearing, deformation, or fastener failure. DecoTECH, on the other hand, keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated—protecting the roof, preserving the sub-structure, and ensuring the worker’s safety in one seamless response.
+              </BodyCopyText>
+
+            </div>
+          </div>
+        </ContainerSection>
+      </div>
+      {/* <ContainerSection className="">
+        <div className="">
+
+          <HeaderText className="mb-[25px]">Structural Load Analysis</HeaderText>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+            <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm flex items-center justify-center rounded-sm relative overflow-hidden group">
+
+              <video className="w-full h-full object-cover relative z-10" controls poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+1+Placeholder">
+                <source src="movie.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm flex items-center justify-center rounded-sm relative overflow-hidden group">
+  
+              <video className="w-full h-full object-cover relative z-10" controls poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+2+Placeholder">
+                <source src="movie.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <div className="rounded-sm">
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg"
+                alt="Load Analysis Graph"
+                width={1000}
+                height={1000}
+                className="w-full h-auto object-contain rounded-sm mix-blend-multiply"
+              />
+            </div>
+
+            <BodyCopyText className="space-y-4 w-full text-left">
+              When a fall happens on a lifeline system, the force travels directly into the roof structure. This is where the difference between DecoTECH and traditional competitor roof posts becomes critical. In a fall, competitor posts create a sudden force spike of 10–12 kN, far above the safe limit the roof sheet and purlins can withstand. This violent impact travels straight into the structure, increasing the risk of sheet tearing, deformation, or fastener failure. DecoTECH, on the other hand, keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated—protecting the roof, preserving the sub-structure, and ensuring the worker’s safety in one seamless response.
+            </BodyCopyText>
+
+          </div>
+        </div>
+
+      </ContainerSection> */}
+    </MainPage>
+  );
+}
+
+
+
+
+
+
+
+
+
+new od Decotech
+
+
+// "use client";
+// import Image from "next/image";
+// import { BodyCopyText } from "@/components/views/BodyCopyText";
+// import { HeaderText } from "@/components/views/HeaderText";
+// import MainPage from "@/components/views/MainPage";
+// import ContainerSection from "@/components/views/ContainerSection";
+// import { motion, AnimatePresence } from "framer-motion";
+// import BannerImage from "@/components/views/BannerImage";
+// import { useState } from "react";
+
+// const fadeUp = {
+//   initial: { opacity: 0, y: 40 },
+//   animate: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+// };
+// const fadeIn = {
+//   initial: { opacity: 0 },
+//   animate: { opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+// };
+
+// const tabs = [
+//   { id: 1, label: "Fall Protection" },
+//   { id: 2, label: "Roof Integrity" },
+//   { id: 3, label: "Structural Load Anaylsis" },
+// ];
+
+// // Tab 1 component with its own layout/design
+// function Tab1Content() {
+//   return (
+//     <div className="grid grid-cols-12 gap-4 items-start">
+//       <div className="col-span-12 md:col-span-6 lg:col-span-5  flex justify-center md:justify-start">
+//         <Image
+//           src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360 angle.jpg`}
+//           alt="Fixed Lifeline System"
+//           width={1000}
+//           height={1000}
+//           className="w-full h-auto object-contain rounded-sm"
+//         />
+//       </div>
+//       <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//         <HeaderText className="text-left mb-[25px]">Fall Protection From <span className="text-[#d42225]">Any Angle</span></HeaderText>
+//         <BodyCopyText className="space-y-4 w-full text-left">
+//           Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures that the forces are dissipated protecting the user and the roof structure. This is crucial because falls can occur in various orientations, and the anchor needs to be effective regardless of the fall angle.
+//         </BodyCopyText>
+//       </div>
+//     </div>
+//   );
+// }
+
+// // Tab 2 component customized independently
+// function Tab2Content() {
+//   return (
+//     <div>
+//       <div className="hidden md:grid grid-cols-12 gap-4 items-start">
+//         <div className="col-span-12 md:col-span-6 lg:col-span-5  flex flex-col justify-center md:justify-start space-y-4">
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#d42225]">
+//               Ordinary engineering leads to high stresses on sub-structures
+//             </BodyCopyText>
+//           </div>
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#489949]">
+//               Our DecoTECH Energy Dissipating Technology ensures negligible impact on sub-structures
+//             </BodyCopyText>
+//           </div>
+//         </div>
+//         <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//           <HeaderText className="text-left mb-[25px]">Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span></HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology. This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles – be they old or new. This versatility enhances safety and minimizes the risk to the structural integrity of the roof.
+//           </BodyCopyText>
+//         </div>
+//       </div>
+//       <div className="grid grid-cols-12 md:hidden gap-4 items-start ">
+//         <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//           <HeaderText className="text-left mb-[25px]">Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span></HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology. This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles – be they old or new. This versatility enhances safety and minimizes the risk to the structural integrity of the roof.
+//           </BodyCopyText>
+//         </div>
+//         <div className="col-span-12 md:col-span-6 lg:col-span-5  flex flex-col justify-center md:justify-start space-y-4">
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#d42225]">
+//               Ordinary engineering leads to high stresses on sub-structures
+//             </BodyCopyText>
+//           </div>
+//           <div className="flex flex-col gap-4">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//               alt="Fixed Lifeline System"
+//               width={1000}
+//               height={1000}
+//               className="w-full  h-auto object-contain rounded-sm"
+//             />
+//             <BodyCopyText className="space-y-4 w-full text-left text-[#489949]">
+//               Our DecoTECH Energy Dissipating Technology ensures negligible impact on sub-structures
+//             </BodyCopyText>
+//           </div>
+//         </div>
+
+//       </div>
+//     </div>
+//   );
+// }
+
+// // Tab 3 component with another unique layout
+// function Tab3Content() {
+//   return (
+//     <div className="grid grid-cols-12 gap-4 items-start">
+//       <div className="col-span-12 md:col-span-6 lg:col-span-5  flex justify-center md:justify-start">
+//         <Image
+//           src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg`}
+//           alt="Fixed Lifeline System"
+//           width={1000}
+//           height={1000}
+//           className="w-full h-auto object-contain rounded-sm"
+//         />
+//       </div>
+//       <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//         <HeaderText className="text-left mb-[25px]">Structural Load Anaylsis</HeaderText>
+//         <BodyCopyText className="space-y-4 w-full text-left">
+//           When a fall happens on a lifeline system, the force travels directly into the roof structure. This is where the difference between DecoTECH and traditional competitor roof posts becomes critical. In a fall, competitor posts create a sudden force spike of 10–12 kN, far above the safe limit the roof sheet and purlins can withstand. This violent impact travels straight into the structure, increasing the risk of sheet tearing, deformation, or fastener failure. DecoTECH, on the other hand, keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated—protecting the roof, preserving the sub-structure, and ensuring the worker’s safety in one seamless response.
+//         </BodyCopyText>
+//       </div>
+//     </div>
+//   );
+// }
+
+// const Feature = [
+//   {
+//     name: "360-degree energy dissipation",
+//     desc: "",
+//   },
+//   {
+//     name: "Maintains integrity of structure",
+//     desc: "",
+//   },
+//   {
+//     name: "Absorbs forces & brings them down to less than 6 KN",
+//     desc: "",
+//   },
+//   {
+//     name: "Tested & compliant for multi-user protection",
+//     desc: "",
+//   },
+//   {
+//     name: "Worry free rooftop experience",
+//     desc: "",
+//   }
+// ]
+
+// export default function DecotechPage() {
+//   const [hoverIndex, setHoverIndex] = useState(null);
+//   const [activeTab, setActiveTab] = useState(1);
+
+//   // Render tab content based on activeTab state
+//   function renderActiveTabContent() {
+//     switch (activeTab) {
+//       case 1:
+//         return <Tab1Content />;
+//       case 2:
+//         return <Tab2Content />;
+//       case 3:
+//         return <Tab3Content />;
+//       default:
+//         return null;
+//     }
+//   }
+//   return (
+//     <MainPage className="">
+//       <BannerImage
+//         image="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Banner.jpg"
+//       // mobileImage={`https://placehold.co/600x400?text=Decotech Image`}
+//         text={`DecoTECH`}
+//       />
+//       <ContainerSection>
+//         <div className="">
+//           <p className="text-[#d42225] text-sm opacity-60 font-normal drop-shadow-lg mb-[10px]">
+//             Distinctive Innovation
+//           </p>
+//           <HeaderText className="text-left mb-[25px]">DecoTECH Energy Dissipating Technology</HeaderText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof and protecting individuals working at heights.
+//           </BodyCopyText>
+//           <BodyCopyText className="space-y-4 w-full text-left">
+//             Our posts typically consist of a sturdy structure that can securely anchor a worker’s fall protection device, and they incorporate force absorbing and dissipating mechanisms.
+//           </BodyCopyText>
+//         </div>
+//         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 overflow-hidden">
+//           {Feature.map((feature, index) => (
+//             <div
+//               key={index}
+//               onMouseEnter={() => setHoverIndex(index)}
+//               onMouseLeave={() => setHoverIndex(null)}
+//               className="
+//                       cursor-pointer flex flex-col items-center justify-center text-center align-middle
+//                       p-4 h-40
+//                       border-r border-opacity-5
+//                       transition-colors duration-300 ease-in-out
+//                     "
+//               style={{ minHeight: '6rem' }}
+//             >
+//               <motion.div
+//                 layout
+//                 initial={{ y: 0, color: "#000" }}
+//                 animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                 transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                 className="text-[14px] z-10 pointer-events-none"
+//               >
+//                 {feature.name}
+//               </motion.div>
+//             </div>
+//           ))}
+//         </div> */}
+//         <div className="block md:hidden space-y-8">
+//           {Feature.map((feature, index) => (
+//             <div key={index}
+//               onMouseEnter={() => setHoverIndex(index)}
+//               onMouseLeave={() => setHoverIndex(null)}
+//               className="border-b border-black border-opacity-20 pb-6 last:border-b-0 cursor-pointer ">
+//               <motion.div
+//                 layout
+//                 initial={{ y: 0, color: "#000" }}
+//                 animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                 transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                 className="text-[14px] z-10 pointer-events-none text-center "
+//               >
+//                 {feature.name}
+//               </motion.div>
+//             </div>
+//           ))}
+//         </div>
+
+
+//         <div className="hidden md:block">
+//           <div className="flex flex-wrap divide-x divide-black divide-opacity-20 ">
+//             {Feature.map((feature, index) => (
+//               <div
+//                 onMouseEnter={() => setHoverIndex(index)}
+//                 onMouseLeave={() => setHoverIndex(null)}
+//                 key={index}
+//                 className={`w-[20%] px-4 border-b p-4 cursor-pointer flex flex-col items-center justify-center text-center align-middle h-40
+//                                 ${index > 3 - 4 ? "border-b-0" : ""} 
+//                                 ${(index + 1) % 4 === 0 ? "border-r-0" : ""}`}
+//               >
+//                 <motion.div
+//                   layout
+//                   initial={{ y: 0, color: "#000" }}
+//                   animate={hoverIndex === index ? { color: "#d42225" } : { y: 0, color: "#000" }}
+//                   transition={{ type: "spring", stiffness: 300, damping: 40 }}
+//                   className="text-[14px] z-10 pointer-events-none"
+//                 >
+//                   {feature.name}
+//                 </motion.div>
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//         <div className="w-full max-w-4xl mx-auto p-4">
+//           <div className="flex border-b border-gray-300 relative">
+//             {tabs.map((tab) => (
+//               <div
+//                 key={tab.id}
+//                 className={`cursor-pointer flex-1 text-center py-3 font-medium ${activeTab === tab.id ? "text-[#d42225]" : "text-gray-600"
+//                   }`}
+//                 onClick={() => setActiveTab(tab.id)}
+//               >
+//                 {tab.label}
+//               </div>
+//             ))}
+//             <motion.div
+//               layoutId="underline"
+//               className="absolute bottom-0 h-1 bg-red-600 rounded"
+//               style={{
+//                 width: `calc(100% / ${tabs.length})`,
+//                 left: `calc((100% / ${tabs.length}) * ${activeTab - 1})`,
+//               }}
+//               transition={{ type: "spring", stiffness: 300, damping: 30 }}
+//             />
+//           </div>
+//         </div>
+//         <div className="mt-6 min-h-[8rem]">
+//           <AnimatePresence mode="wait">
+//             <motion.div
+//               key={activeTab}
+//               initial={{ opacity: 0, y: 10 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               exit={{ opacity: 0, y: -10 }}
+//               transition={{ duration: 0.3 }}
+//               className=""
+//             >
+//               {renderActiveTabContent()}
+//             </motion.div>
+//           </AnimatePresence>
+//         </div>
+//       </ContainerSection>
+//     </MainPage>
+//   );
+// }
+
+
+// "use client";
+// import Image from "next/image";
+// import { BodyCopyText } from "@/components/views/BodyCopyText";
+// import { HeaderText } from "@/components/views/HeaderText";
+// import MainPage from "@/components/views/MainPage";
+// import ContainerSection from "@/components/views/ContainerSection";
+// import BannerImage from "@/components/views/BannerImage";
+
+// const Feature = [
+//   { name: "360-degree energy dissipation" },
+//   { name: "Maintains integrity of structure" },
+//   { name: "Absorbs forces & brings them down to less than 6 KN" },
+//   { name: "Tested & compliant for multi-user protection" },
+//   { name: "Worry free rooftop experience" }
+// ];
+
+// export default function DecotechPage() {
+//   return (
+//     <MainPage className="">
+//       <BannerImage
+//         image="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Banner.jpg"
+//         text={`DecoTECH`}
+//       />
+//       <ContainerSection>
+
+//         {/* SECTION 1: Distinctive Innovation (Image Left, Features/Text Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-center mb-20">
+//           {/* Green Area: Image */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-5 flex justify-center md:justify-start">
+//             <div className="w-full relative bg-green-50 rounded-sm overflow-hidden">
+//               {/* Using placeholder as main image wasn't specified for this exact section, utilizing banner logic or generic */}
+//               <Image
+//                 src="https://placehold.co/600x600/e0ffe0/000000?text=Distinctive+Innovation+(Image)"
+//                 alt="Distinctive Innovation"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-cover"
+//               />
+//             </div>
+//           </div>
+
+//           {/* Text Area */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-8">
+//             <p className="text-[#d42225] text-sm opacity-60 font-normal drop-shadow-lg mb-[10px]">
+//               Distinctive Innovation
+//             </p>
+//             <HeaderText className="text-left mb-[25px]">
+//               Our roof anchors are designed to enhance fall protection
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left mb-6">
+//               Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof.
+//             </BodyCopyText>
+
+//             {/* Feature List embedded here as per wireframe */}
+//             <ul className="space-y-2">
+//               {Feature.map((feature, index) => (
+//                 <li key={index} className="flex items-start text-sm font-medium text-gray-800">
+//                   <span className="mr-2 text-[#d42225]">•</span>
+//                   {feature.name}
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+
+//         {/* SECTION 2: Fall Protection (Image Left, Text Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-center mb-20 border-t pt-10 border-gray-100">
+//           {/* Green Area: Image */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-5 flex justify-center md:justify-start">
+//             <Image
+//               src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360 angle.jpg`}
+//               alt="Fall Protection"
+//               width={1000}
+//               height={1000}
+//               className="w-full h-auto object-contain rounded-sm bg-green-50"
+//             />
+//           </div>
+
+//           {/* Text Area */}
+//           <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//             <HeaderText className="text-left mb-[25px]">
+//               Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900">
+//               Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures safety.
+//             </BodyCopyText>
+//             <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//               Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures that the forces are dissipated protecting the user and the roof structure.
+//             </BodyCopyText>
+//           </div>
+//         </div>
+
+//         {/* SECTION 3: Roof Integrity (Text Left, Two Images Right) */}
+//         <div className="grid grid-cols-12 gap-8 items-start mb-20 border-t pt-10 border-gray-100">
+//           {/* Text Area (Left) */}
+//           <div className="col-span-12 md:col-span-5">
+//             <HeaderText className="text-left mb-[25px]">
+//               Roof Integrity With <span className="text-[#d42225]">DecoTECH™</span>
+//             </HeaderText>
+//             <BodyCopyText className="space-y-4 w-full text-left font-bold">
+//               In case of a fall, our anchor activates its innovative DecoTECH Energy Dissipating Technology.
+//             </BodyCopyText>
+//             <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//               This technology effectively absorbs and dissipates forces, ensuring that the impact on the roof structure is minimal, reducing it to less than 6 kN. This impressive force reduction makes our anchor suitable for installation on various roof profiles.
+//             </BodyCopyText>
+//           </div>
+
+//           {/* Two Green Images (Right) */}
+//           <div className="col-span-12 md:col-span-7 grid grid-cols-2 gap-4">
+//             <div className="flex flex-col gap-2">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH copy_silver.jpg`}
+//                 alt="High Stress"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//               <p className="text-xs text-[#d42225] font-semibold">Ordinary engineering</p>
+//             </div>
+//             <div className="flex flex-col gap-2">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof Integrity With DecoTECH green.jpg`}
+//                 alt="DecoTECH"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//               <p className="text-xs text-[#489949] font-semibold">DecoTECH Technology</p>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* SECTION 4: Structural Load Analysis (Videos Top, Image Left/Text Right Bottom) */}
+//         <div className="mb-10 border-t pt-10 border-gray-100">
+//           <div className="text-center md:text-left mb-8">
+//             <HeaderText className="text-left mb-[25px]">Structural Load Analysis</HeaderText>
+//           </div>
+
+//           {/* Yellow Area: Two Videos Side by Side */}
+//           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+//             <div className="w-full aspect-video bg-yellow-100 flex items-center justify-center rounded-sm relative overflow-hidden">
+//               {/* Placeholder for Video 1 */}
+//               <video className="w-full h-full object-cover" controls poster="https://placehold.co/600x400/fff9c4/000000?text=Video+1+Placeholder">
+//                 <source src="movie.mp4" type="video/mp4" />
+//                 Your browser does not support the video tag.
+//               </video>
+//             </div>
+//             <div className="w-full aspect-video bg-yellow-100 flex items-center justify-center rounded-sm relative overflow-hidden">
+//               {/* Placeholder for Video 2 */}
+//               <video className="w-full h-full object-cover" controls poster="https://placehold.co/600x400/fff9c4/000000?text=Video+2+Placeholder">
+//                 <source src="movie.mp4" type="video/mp4" />
+//                 Your browser does not support the video tag.
+//               </video>
+//             </div>
+//           </div>
+
+//           {/* Bottom Row: Green Image Left, Text Right */}
+//           <div className="grid grid-cols-12 gap-8 items-center">
+//             <div className="col-span-12 md:col-span-6 lg:col-span-5">
+//               <Image
+//                 src={`/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/2.jpg`}
+//                 alt="Load Analysis"
+//                 width={1000}
+//                 height={1000}
+//                 className="w-full h-auto object-contain rounded-sm bg-green-50"
+//               />
+//             </div>
+//             <div className="col-span-12 md:col-span-6 lg:col-span-7 lg:px-[93.5px]">
+//               <BodyCopyText className="space-y-4 w-full text-left font-bold">
+//                 When a fall happens on a lifeline system, the force travels directly into the roof structure.
+//               </BodyCopyText>
+//               <BodyCopyText className="space-y-4 w-full text-left mt-4">
+//                 DecoTECH keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated.
+//               </BodyCopyText>
+//             </div>
+//           </div>
+//         </div>
+
+//       </ContainerSection>
+//     </MainPage>
+//   );
+// }
+
+"use client";
+import Image from "next/image";
+import { BodyCopyText } from "@/components/views/BodyCopyText";
+import { HeaderText } from "@/components/views/HeaderText";
+import MainPage from "@/components/views/MainPage";
+import ContainerSection from "@/components/views/ContainerSection";
+import { motion } from "framer-motion";
+import { container, containerLeft, fadeLeft, fadeUp } from "../_components/fadeUp";
+// --- CUSTOM VIEWPORT CONFIGURATION ---
+// You can adjust these pixel values to control when the layout switches
+// from mobile (stacked) to desktop (overlay).
+const customBreakpoints = {
+  desktop: "min-[1024px]", // Triggers the side-by-side/overlay view
+};
+
+const Feature = [
+  { name: "360-degree energy dissipation" },
+  { name: "Maintains integrity of structure" },
+  { name: "Absorbs forces & brings them down to less than 6 KN" },
+  { name: "Tested & compliant for multi-user protection" },
+  { name: "Worry free rooftop experience" }
+];
+
+export default function DecotechPage() {
+  return (
+    <MainPage noGapTop className="mb-0 bg-[#001d25]">
+
+
+      {/* <div className="relative w-full min-h-[650px] flex items-center py-12 md:py-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider.jpg"
+            alt="Distinctive Innovation Background"
+            fill
+            priority={true}
+            className="object-cover object-center"
+          />
+        </div>
+        <ContainerSection className="relative z-10 w-full h-full pointer-events-none ">
+          <div className={`grid grid-cols-1 md:grid-cols-12 h-full items-center `}>
+            <div className={`hidden md:block col-span-8`}></div>
+            <div className={`col-span-1 md:col-span-4 pointer-events-auto `}>
+              <div className="text-center">
+                <p className="text-[#d42225] text-sm opacity-80 font-bold uppercase tracking-wide mb-3">
+                  Distinctive Innovation
+                </p>
+                <HeaderText className="text-left mb-5 text-gray-900">
+                  Our roof anchors are designed to enhance fall protection
+                </HeaderText>
+                <BodyCopyText className="space-y-4 w-full text-left mb-6 text-gray-800">
+                  Our roof anchors are designed to enhance fall protection systems on roofs by dissipating and reducing the forces generated during a fall. These anchors are crucial for maintaining the structural integrity of the roof.
+                </BodyCopyText>
+                <ul className="space-y-3">
+                  {Feature.map((feature, index) => (
+                    <li key={index} className="flex items-start text-sm font-semibold text-gray-800">
+                      <span className="mr-3 text-[#d42225] text-lg leading-none">•</span>
+                      {feature.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </ContainerSection>
+      </div>
+      <div className="relative w-full min-h-[780px] flex items-center overflow-hidden -mt-[130px]">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Slider 01.jpg"
+            alt="Distinctive Innovation Background"
+            fill
+            priority={true}
+            className="object-cover object-center "
+          />
+
+        </div>
+        <ContainerSection className="relative z-10 w-full h-full pointer-events-none">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-24">
+            <div className="flex justify-center md:justify-start">
+              <div className="rounded-sm w-full">
+                
+              </div>
+            </div>
+
+            <div className="lg:px-8">
+              <HeaderText className="text-left mb-[25px]">
+                Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+              </HeaderText>
+              <BodyCopyText className="space-y-4 w-full text-left font-bold text-gray-900 text-lg">
+                Regardless of the direction or angle from which a fall occurs, the 360-degree energy dissipating deploying feature ensures safety.
+              </BodyCopyText>
+              <BodyCopyText className="space-y-4 w-full text-left mt-4">
+                This is crucial because falls can occur in various orientations, and the anchor needs to be effective regardless of the fall angle, protecting both the user and the roof structure.
+              </BodyCopyText>
+            </div>
+          </div>
+        </ContainerSection>
+      </div> */}
+
+
+
+
+      {/* ================= HEADER ================= */}
+      {/* <header className="w-full border-b">
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <h1 className="text-2xl font-bold">Decotech</h1>
+        </div>
+      </header> */}
+
+      {/* ================= HERO ================= */}
+
+
+
+
+
+      {/* ================= BANNER ================= */}
+      <section className="relative w-full h-[500px] md:h-[650px] lg:h-[768px] overflow-hidden">
+        <Image
+          src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech slider 01.jpg"
+          alt="Roof Worker Safety"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/20" />
+      </section>
+
+
+      {/* ================= DECOTECH SECTION ================= */}
+      <section className="relative w-full overflow-visible lg:-mt-[150px] z-20">
+
+        <div className="grid lg:grid-cols-2 min-h-[520px]">
+
+          {/* ================= LEFT — IMAGE SECTION ================= */}
+          <div
+            className="
+        relative
+        bg-cover
+        bg-center
+        flex
+        items-end
+        justify-center
+        lg:justify-start
+        pt-16
+        lg:pt-0
+      "
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech slider 02 left.jpg')",
+            }}
+          >
+            {/* PRODUCT IMAGE */}
+            <div className="relative lg:absolute lg:bottom-0 lg:left-[-160px] lg:-translate-y-[14%] ">
+              {/* lg:left-[-120px]
+              lg:-translate-y-[30%] */}
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech product.png"
+                alt="SAFE PRO Anchor"
+                width={1650}
+                height={1650}
+                priority
+                className="
+            w-[280px]
+            sm:w-[360px]
+            md:w-[420px]
+            lg:w-[700px]
+            xl:w-[820px]
+            h-auto
+            object-contain
+            pointer-events-none
+            select-none
+          "
+              />
+
+            </div>
+          </div>
+
+
+          {/* ================= RIGHT — TEXT SECTION ================= */}
+          <div
+            className="
+        relative
+        bg-cover
+        bg-center
+        flex
+        items-center
+      "
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech slider 02 right.jpg')",
+            }}
+          >
+
+            <div className="max-w-xl px-6 py-16 lg:px-12">
+
+              <BodyCopyText className="max-w-[55ch] w-full text-left text-gray-900">
+                Our roof anchors are designed to enhance fall protection systems on
+                roofs by dissipating and reducing the forces generated during a fall.
+                These anchors are crucial for maintaining the structural integrity
+                of the roof.
+              </BodyCopyText>
+
+              <BodyCopyText className="max-w-[55ch] w-full text-left mt-4 mb-8 text-gray-900">
+                Our posts typically consist of a sturdy structure that can securely
+                anchor a worker&apos;s fall protection device, and they incorporate
+                force absorbing and dissipating mechanisms.
+              </BodyCopyText>
+
+              <ul className="list-disc pl-5 space-y-2 text-gray-900 font-semibold text-[15px] sm:text-base leading-relaxed">
+                {Feature.map((feature, index) => (
+                  <li key={index}>{feature.name}</li>
+                ))}
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section className="relative w-full overflow-hidden -mt-[2px]">
+
+        <div className="grid md:grid-cols-2 min-h-[420px] md:min-h-[520px] w-full">
+
+          {/* LEFT SECTION */}
+          <div
+            className="relative flex items-center bg-no-repeat bg-cover bg-right px-6 lg:px-16"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Fall Protection left.jpg')",
+            }}
+          >
+            <div className="relative z-10 max-w-xl text-gray-800">
+
+              <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
+                Fall Protection <br />
+                From <span className="text-[#d42225]">Any Angle</span>
+              </h2>
+
+              <BodyCopyText className="text-[15px] md:text-base leading-relaxed text-gray-700">
+                Regardless of the direction or angle from which a fall occurs,
+                the 360-degree energy dissipating deploying feature ensures that
+                the forces are dissipated protecting the user and the roof structure.
+              </BodyCopyText>
+
+            </div>
+          </div>
+
+
+          {/* RIGHT SECTION */}
+          <div
+            className="relative flex items-center justify-center md:justify-end bg-no-repeat bg-cover bg-left px-6 lg:px-16"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Fall Protection right.jpg')",
+            }}
+          >
+
+            <img
+              src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/front-product.png"
+              alt="Product"
+              className="
+    relative z-10
+    w-[280px]
+    sm:w-[360px]
+    md:w-[440px]
+    lg:w-[520px]
+    xl:w-[600px]
+    h-auto
+    object-contain
+    md:mr-12
+  "
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* fall protection */}
+      <section className="relative w-full overflow-hidden">
+
+        {/* FULL-WIDTH GRID (not inside max-w container) */}
+        <div className="grid md:grid-cols-2 min-h-[420px] md:min-h-[520px] w-full">
+
+          {/* ================= LEFT SIDE ================= */}
+          <div
+            className="relative flex items-center bg-cover bg-center px-6 lg:px-16"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Fall Protection left.jpg')",
+            }}
+          >
+            {/* Left overlay */}
+            {/* <div className="absolute inset-0 bg-white/80"></div> */}
+
+            {/* Content (centered inside) */}
+            <div className="relative z-10 max-w-xl text-gray-800 mx-auto">
+              <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-4">
+                Fall Protection <br />
+                From <span className="text-[#d42225]">Any Angle</span>
+              </h2>
+
+              <BodyCopyText className="text-[15px] md:text-base leading-relaxed">
+                Regardless of the direction or angle from which a fall occurs,
+                the 360-degree energy dissipating deploying feature ensures that
+                the forces are dissipated protecting the user and the roof
+                structure.
+              </BodyCopyText>
+            </div>
+          </div>
+
+          {/* ================= RIGHT SIDE ================= */}
+          <div
+            className="relative flex items-center justify-center md:justify-end bg-cover bg-center px-6 lg:px-16"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Fall Protection right.jpg')",
+            }}
+          >
+            {/* Right overlay */}
+            {/* <div className="absolute inset-0 bg-white/80"></div> */}
+
+            <img
+              src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/front-product.png"
+              alt="Product"
+              className="
+          relative z-10
+          w-[260px]
+          sm:w-[320px]
+          md:w-[380px]
+          lg:w-[420px]
+          h-auto
+          object-contain
+        "
+            />
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <section className="relative w-full overflow-hidden">
+
+        <div className="grid md:grid-cols-2 min-h-[420px] md:min-h-[520px] w-full">
+
+          {/* ================= LEFT : BG + TEXT ================= */}
+          <div
+            className="relative flex items-center bg-cover bg-center px-6 lg:px-16"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof integrity with decotech left.jpg')",
+            }}
+          >
+            {/* Optional overlay for readability */}
+            {/* <div className="absolute inset-0 bg-black/40" /> */}
+
+            {/* TEXT */}
+            <div className="relative z-10 max-w-xl text-white">
+
+              <h2 className="text-2xl md:text-3xl font-extrabold leading-tight mb-4">
+                Roof Integrity With{" "}
+                <span className="text-[#d42225]">DecoTECH™</span>
+              </h2>
+
+              <BodyCopyText className="font-bold text-lg">
+                In case of a fall, our anchor activates its innovative
+                DecoTECH Energy Dissipating Technology.
+              </BodyCopyText>
+
+              <BodyCopyText className="mt-4 text-white/90">
+                This technology effectively absorbs and dissipates forces,
+                ensuring minimal impact on the roof structure.
+              </BodyCopyText>
+            </div>
+          </div>
+
+          {/* ================= RIGHT : BG ONLY ================= */}
+          <div
+            className="
+    relative
+    min-h-[70vh]
+    md:min-h-[520px]
+    bg-contain
+    md:bg-cover
+    bg-no-repeat
+    bg-center
+   bg-gray-100
+  "
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/Roof integrity with decotech right.jpg')",
+            }}
+          />
+
+        </div>
+      </section>
+
+
+      {/* old banner image */}
+      <section className="max-w-7xl mx-auto overflow-hidden">
+
+        {/* ================= TOP HEADING ================= */}
+
+
+        {/* ================= TWO COLUMN LAYOUT ================= */}
+        <div className="grid md:grid-cols-2 items-stretch">
+
+          {/* ================= LEFT : IMAGE ONLY ================= */}
+          <div className="w-full h-full">
+            <Image
+              src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech_left.jpg"
+              alt="Product Image"
+              width={700}
+              height={600}
+              priority
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* ================= RIGHT : TEXT WITH BG IMAGE ================= */}
+          <div className="relative flex items-center">
+
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/decotech_right.jpg')",
+              }}
+            />
+
+            {/* Optional overlay */}
+            <div className="absolute inset-0 " />
+
+            {/* Text Content */}
+            <div className="relative px-4 py-6 sm:p-0 text-white">
+              <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/LOGOS.png"
+                alt="SAFE PRO"
+                width={160}
+                height={40}
+                className="w-[150px] h-auto mb-[10px]"
+                priority
+              />
+
+              <HeaderText className="text-left  mb-[5px]">
+                Distinctive Innovation
+              </HeaderText>
+
+              <h3 className="text-[24px] md:text-[26px] leading-[1.2] font-medium  mb-2">
+                DecoTECH Energy<br />
+                Dissipating Technology
+              </h3>
+
+              <BodyCopyText className="space-y-4 w-full text-left mt-2 text-white">
+                Our roof anchors are designed to enhance fall protection systems on
+                roofs by dissipating and reducing the forces generated during a fall.
+                These anchors are crucial for maintaining the structural integrity of the roof.
+              </BodyCopyText>
+
+              <BodyCopyText className="space-y-4 w-full text-left mt-2 text-white">
+                Our posts typically consist of a sturdy structure that can securely
+                anchor a worker&apos;s fall protection device, and they incorporate force
+                absorbing and dissipating mechanisms.
+              </BodyCopyText>
+
+              <ul className="mt-2 space-y-2 text-white">
+                {Feature.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="mr-3 text-[#d42225] text-base leading-none mt-0.5">
+                      •
+                    </span>
+                    <span className="flex-1 text-10 text-white">
+                      {feature.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="max-w-7xl mx-auto overflow-hidden">
+
+        {/* ================= TOP HEADING ================= */}
+        <HeaderText className=" text-white text-center mb-[25px]">
+          Features & Advantages
+        </HeaderText>
+
+        {/* ================= TWO COLUMN LAYOUT ================= */}
+        <div className="grid md:grid-cols-2 items-stretch">
+
+          {/* ================= LEFT : IMAGE ONLY ================= */}
+          <div className="w-full h-full">
+            <Image
+              src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360_left.jpg"
+              alt="Product Image"
+              width={700}
+              height={600}
+              priority
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* ================= RIGHT : TEXT WITH BG IMAGE ================= */}
+          <div className="relative flex items-center">
+
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/360_right.jpg')",
+              }}
+            />
+
+            {/* Optional overlay */}
+            <div className="absolute inset-0 " />
+
+            {/* Text Content */}
+            <div className="relative px-4 py-6 sm:p-0 text-white">
+
+
+
+              {/* <Image
+                src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/LOGOS.png"
+                alt="SAFE PRO"
+                width={160}
+                height={40}
+                className="w-[150px] h-auto mb-[10px]"
+                priority
+              /> */}
+
+              <HeaderText className="text-left mb-[25px] ">
+                Fall Protection From <span className="text-[#d42225]">Any Angle</span>
+              </HeaderText>
+
+              <BodyCopyText className="space-y-4 w-full text-left font-bold text-white text-lg">
+                Regardless of the direction or angle from which a fall occurs, the
+                360-degree energy dissipating deploying feature ensures safety.
+              </BodyCopyText>
+
+              <BodyCopyText className="space-y-4 w-full text-white text-left mt-4">
+                This is crucial because falls can occur in various orientations,
+                and the anchor needs to be effective regardless of the fall angle.
+              </BodyCopyText>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="w-full overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+
+          {/* LEFT */}
+          <div
+            className="relative flex items-center min-h-[420px] bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/roof_integrity_left.jpg')",
+            }}
+          >
+            <div className="absolute inset-0 bg-black/40" />
+
+            <div className="relative px-8 py-12 text-white max-w-xl">
+              <HeaderText className="mb-6">
+                Roof Integrity With{" "}
+                <span className="text-[#d42225]">DecoTECH™</span>
+              </HeaderText>
+
+              <BodyCopyText className="font-bold text-lg">
+                In case of a fall, our anchor activates its innovative
+                DecoTECH Energy Dissipating Technology.
+              </BodyCopyText>
+
+              <BodyCopyText className="mt-4 text-white/90">
+                This technology effectively absorbs and dissipates forces,
+                ensuring minimal impact on the roof structure.
+              </BodyCopyText>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div
+            className="relative min-h-[420px] bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/roof_integrity_right.jpg')",
+            }}
+          >
+            {/* <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-green-600 font-semibold">
+              DecoTECH ensures negligible impact
+            </div> */}
+          </div>
+
+        </div>
+      </section>
+
+
+      <section className="max-w-7xl mx-auto overflow-hidden">
+
+        {/* ================= TOP HEADING ================= */}
+        {/* <HeaderText className=" text-white text-center mb-[25px]">
+          Features & Advantages
+        </HeaderText> */}
+
+        {/* ================= TWO COLUMN LAYOUT ================= */}
+        <div className="grid md:grid-cols-2 items-stretch">
+
+          {/* ================= LEFT : IMAGE ONLY ================= */}
+          <div className="w-full h-full">
+            <Image
+              src="/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/graph_left.jpg"
+              alt="Product Image"
+              width={700}
+              height={600}
+              priority
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* ================= RIGHT : TEXT WITH BG IMAGE ================= */}
+          <div className="relative flex items-center">
+
+            {/* Background Image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage:
+                  "url('/img/Products/Fixed Lifeline System/Roof Lifeline/03 Decotech/graph_right.jpg')",
+              }}
+            />
+
+            {/* Optional overlay */}
+            <div className="absolute inset-0 " />
+
+            {/* Text Content */}
+
+
+            <div
+              className="   relative text-white   w-full   max-w-none  px-4 py-4   leading-relaxed sm:max-w-2xl  md:max-w-xl lg:px-16   "
+            >
+
+
+
+              <BodyCopyText className="space-y-4 leading-[2] text-white text-left">
+                When a fall happens on a lifeline system, the force travels directly into the roof structure. This is where the difference between DecoTECH and traditional competitor roof posts becomes critical. In a fall, competitor posts create a sudden force spike of 10–12 kN, far above the safe limit the roof sheet and purlins can withstand. This violent impact travels straight into the structure, increasing the risk of sheet tearing, deformation, or fastener failure. DecoTECH, on the other hand, keeps the load consistently below 6 kN through its engineered energy-dissipating mechanism. Instead of a sharp shock, the force is smoothly absorbed, controlled, and dissipated—protecting the roof, preserving the sub-structure, and ensuring the worker’s safety in one seamless response.
+              </BodyCopyText>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= FEATURE ================= */}
+
+
+      {/* ================= CONTENT SECTION 2 ================= */}
+
+      {/* Content 3  */}
+
+
+      {/* ================= VIDEO SECTION ================= */}
+      <section className="max-w-7xl mx-auto">
+
+        {/* ================= HEADING ================= */}
+        <HeaderText className="mb-[25px] text-white text-center">
+          Structural Load Analysis
+        </HeaderText>
+
+        {/* ================= VIDEOS ================= */}
+        <div className="grid md:grid-cols-2 gap-6">
+
+          {/* Video 1 */}
+          <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm rounded-sm overflow-hidden">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+1+Placeholder"
+            >
+              <source src="/video/video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* Video 2 */}
+          <div className="w-full aspect-video bg-[#fffde7] border border-yellow-200 shadow-sm rounded-sm overflow-hidden">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="https://placehold.co/600x400/fff9c4/b7a300?text=Video+2+Placeholder"
+            >
+              <source src="/video/video2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section></section>
+
+
+
+
+
+    </MainPage >
+  );
+}
