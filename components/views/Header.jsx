@@ -11,7 +11,7 @@ import {
 	AccordionTrigger,
 	AccordionContent,
 } from "@/components/ui/accordion";
-import { Menu, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, ChevronDown, ChevronRight, ArrowRight, Phone, Mail, ShieldCheck } from "lucide-react";
 import { Button } from "../ui/button";
 import { BodyCopyText } from "./BodyCopyText";
 import AnimatedButton from "./AnimatedButton";
@@ -328,124 +328,159 @@ const Navbar = () => {
 					</div>
 
 					{/* Mobile / iPad Portrait Menu (below lg) */}
-					<div className="lg:hidden">
+					<div className="lg:hidden flex items-center">
 						<Sheet open={open} onOpenChange={setOpen}>
 							<SheetTrigger asChild>
-								{/* Use a plain button — SheetTrigger with asChild avoids the nested button issue on iOS/iPadOS */}
+								{/* Custom Modern Tactile Hamburger Toggle */}
 								<button
 									type="button"
-									aria-label="Open menu"
-									className="text-gray-800 p-2 focus:outline-none"
+									aria-label="Open navigation menu"
+									className="group relative flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-gray-200 shadow-sm hover:border-[#f97316]/50 hover:bg-orange-50/50 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#f97316]/20"
 									onClick={() => setOpen(true)}
 								>
-									<Menu size={24} />
+									<div className="w-5 h-3.5 flex flex-col justify-between items-center">
+										<span className="w-5 h-[2px] bg-gray-700 rounded-full group-hover:bg-[#f97316] transition-colors duration-200" />
+										<span className="w-3.5 h-[2px] bg-gray-700 rounded-full self-start group-hover:w-5 group-hover:bg-[#f97316] transition-all duration-200" />
+										<span className="w-5 h-[2px] bg-gray-700 rounded-full group-hover:bg-[#f97316] transition-colors duration-200" />
+									</div>
 								</button>
 							</SheetTrigger>
+
 							<SheetContent
 								side="right"
-								className="p-4 bg-white text-black h-screen overflow-auto space-y-4 w-[300px] sm:w-[350px]"
+								className="p-0 bg-white text-gray-800 h-full w-[85vw] max-w-[360px] sm:w-[380px] flex flex-col justify-between shadow-2xl border-l border-gray-100"
 							>
 								<SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
-								<Link href="/" onClick={() => setOpen(false)}>
-									<Image
-										src="/img/logo sppl.png"
-										loading="eager"
-										width={618}
-										height={232}
-										className="h-12 w-auto"
-										alt="Logo"
-									/>
-								</Link>
-								<ul className="space-y-4">
-									{navItems.map((item) => (
-										<li key={item.label}>
-											{!item.children ? (
-												<Link
-													href={item.href || "#"}
-													className="text-lg font-medium hover:text-[#f97316] block"
-													onClick={() => setOpen(false)}
-												>
-													{item.label}
-												</Link>
-											) : (
-												<Accordion type="single" collapsible>
-													<AccordionItem value={item.label} className="border-b border-gray-200">
-														<AccordionTrigger className="text-lg font-medium hover:text-[#f97316] py-2">
-															{/* Separate the link and the chevron so tapping the label navigates, tapping chevron toggles */}
-															<Link
-																href={item.href || "#"}
-																className="hover:text-[#f97316] flex-1 text-left"
-																onClick={(e) => {
-																	if (item.href === "#") e.preventDefault();
-																	else setOpen(false);
-																}}
-															>
-																{item.label}
-															</Link>
-														</AccordionTrigger>
-														{item.children && (
-															<AccordionContent>
-																<ul className="ml-4 space-y-2">
-																	{item.children.map((child) => (
-																		<li key={child.label}>
-																			{child.children ? (
-																				<Accordion type="single" collapsible>
-																					<AccordionItem value={child.label} className="border-b border-gray-100">
-																						<AccordionTrigger className="hover:text-[#f97316] py-1 text-sm font-medium">
-																							<Link
-																								href={child.href || "#"}
-																								className="hover:text-[#f97316] flex-1 text-left"
-																								onClick={(e) => {
-																									if (child.href === "#") e.preventDefault();
-																									else setOpen(false);
-																								}}
-																							>
-																								{child.label}
-																							</Link>
-																						</AccordionTrigger>
-																						<AccordionContent>
-																							<ul className="ml-4 space-y-2">
-																								{child.children.map((grandchild) => (
-																									<li key={grandchild.label}>
+
+								{/* Top Brand Header */}
+								<div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between pr-14 bg-white/95 backdrop-blur-sm sticky top-0 z-10">
+									<Link href="/" onClick={() => setOpen(false)} className="flex items-center">
+										<Image
+											src="/img/logo sppl.png"
+											loading="eager"
+											width={618}
+											height={232}
+											className="h-10 w-auto object-contain"
+											alt="SPPL Logo"
+										/>
+									</Link>
+								</div>
+
+								{/* Navigation Links Scrollable Body */}
+								<div className="flex-1 overflow-y-auto px-4 py-4 space-y-1.5 no-scrollbar">
+									<p className="px-3 text-[11px] font-semibold text-gray-400 tracking-wider uppercase mb-2">
+										Navigation
+									</p>
+									<ul className="space-y-1">
+										{navItems.map((item) => (
+											<li key={item.label}>
+												{!item.children ? (
+													<Link
+														href={item.href || "#"}
+														className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 active:bg-orange-100/60 transition-all duration-150 group"
+														onClick={() => setOpen(false)}
+													>
+														<span>{item.label}</span>
+														<ChevronRight
+															size={15}
+															className="text-gray-400 group-hover:text-[#f97316] group-hover:translate-x-0.5 transition-all"
+														/>
+													</Link>
+												) : (
+													<Accordion type="single" collapsible className="w-full">
+														<AccordionItem value={item.label} className="border-0">
+															<AccordionTrigger className="no-underline hover:no-underline px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 data-[state=open]:bg-orange-50/80 data-[state=open]:text-[#f97316] transition-all">
+																<span className="flex-1 text-left flex items-center gap-2">
+																	{item.label}
+																	<span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-[#f97316]">
+																		{item.children.length}
+																	</span>
+																</span>
+															</AccordionTrigger>
+
+															{item.children && (
+																<AccordionContent className="pb-1 pt-1.5">
+																	<div className="ml-3 pl-3 border-l-2 border-orange-200/70 space-y-1 my-1">
+																		{item.children.map((child) => (
+																			<div key={child.label}>
+																				{child.children ? (
+																					<Accordion type="single" collapsible className="w-full">
+																						<AccordionItem value={child.label} className="border-0">
+																							<AccordionTrigger className="no-underline hover:no-underline py-2 px-2.5 rounded-lg text-sm font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/50 data-[state=open]:text-[#f97316] transition-all">
+																								<span className="flex-1 text-left">{child.label}</span>
+																							</AccordionTrigger>
+																							<AccordionContent className="pb-1 pt-1">
+																								<div className="ml-2.5 pl-2.5 border-l border-gray-200 space-y-0.5 my-1">
+																									{child.children.map((grandchild) => (
 																										<Link
+																											key={grandchild.label}
 																											href={grandchild.href || "#"}
-																											className="block hover:text-[#f97316] text-sm py-1"
+																											className="flex items-center gap-2 text-[13px] text-gray-600 hover:text-[#f97316] py-1.5 px-2.5 rounded-md hover:bg-orange-50/40 transition-all group/item"
 																											onClick={() => setOpen(false)}
 																										>
-																											{grandchild.label}
+																											<span className="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover/item:bg-[#f97316] group-hover/item:scale-125 transition-all" />
+																											<span className="group-hover/item:translate-x-0.5 transition-transform">
+																												{grandchild.label}
+																											</span>
 																										</Link>
-																									</li>
-																								))}
-																							</ul>
-																						</AccordionContent>
-																					</AccordionItem>
-																				</Accordion>
-																			) : (
-																				<Link
-																					href={child.href || "#"}
-																					className="block hover:text-[#f97316] text-sm py-1"
-																					onClick={() => setOpen(false)}
-																				>
-																					{child.label}
-																				</Link>
-																			)}
-																		</li>
-																	))}
-																</ul>
-															</AccordionContent>
-														)}
-													</AccordionItem>
-												</Accordion>
-											)}
-										</li>
-									))}
-								</ul>
-								<div>
-									<Link href="/OEM_Collaborators" onClick={() => setOpen(false)}>
-										<Button className="p-2 bg-[#f97316] text-white hover:bg-white hover:text-[#f97316] transition duration-300">
-											OEM & Collaboration
-										</Button>
+																									))}
+																								</div>
+																							</AccordionContent>
+																						</AccordionItem>
+																					</Accordion>
+																				) : (
+																					<Link
+																						href={child.href || "#"}
+																						className="block text-sm font-medium text-gray-700 hover:text-[#f97316] py-2 px-2.5 rounded-lg hover:bg-orange-50/50 transition-all"
+																						onClick={() => setOpen(false)}
+																					>
+																						{child.label}
+																					</Link>
+																				)}
+																			</div>
+																		))}
+																	</div>
+																</AccordionContent>
+															)}
+														</AccordionItem>
+													</Accordion>
+												)}
+											</li>
+										))}
+									</ul>
+								</div>
+
+								{/* Bottom Action & Contact Area */}
+								<div className="p-4 border-t border-gray-100 bg-gray-50/80 space-y-3">
+									<Link href="/OEM_Collaborators" onClick={() => setOpen(false)} className="block">
+										<button
+											type="button"
+											className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#f97316] hover:bg-[#ea580c] active:scale-[0.98] text-white font-semibold text-sm shadow-md shadow-orange-500/20 transition-all duration-200"
+										>
+											<ShieldCheck size={16} />
+											<span>OEM & Collaboration</span>
+											<ArrowRight size={15} className="ml-auto" />
+										</button>
 									</Link>
+
+									<div className="flex items-center justify-around pt-1 text-xs text-gray-500">
+										<Link
+											href="/contact"
+											onClick={() => setOpen(false)}
+											className="flex items-center gap-1.5 hover:text-[#f97316] transition-colors"
+										>
+											<Phone size={13} className="text-[#f97316]" />
+											<span>Contact Us</span>
+										</Link>
+										<span className="text-gray-300">|</span>
+										<a
+											href="mailto:info@safetyprojects.co.in"
+											className="flex items-center gap-1.5 hover:text-[#f97316] transition-colors"
+										>
+											<Mail size={13} className="text-[#f97316]" />
+											<span>Email Sales</span>
+										</a>
+									</div>
 								</div>
 							</SheetContent>
 						</Sheet>
