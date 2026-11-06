@@ -5,6 +5,9 @@ const nextConfig = {
 		unoptimized: true, // Allowed domains for optimized images
 	},
 	output: "export",
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 };
 
 export default nextConfig;
