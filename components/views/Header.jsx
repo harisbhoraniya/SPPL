@@ -390,11 +390,8 @@ const Navbar = () => {
 													<Accordion type="single" collapsible className="w-full">
 														<AccordionItem value={item.label} className="border-0">
 															<AccordionTrigger className="no-underline hover:no-underline px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-gray-700 hover:text-[#f97316] hover:bg-orange-50/70 data-[state=open]:bg-orange-50/80 data-[state=open]:text-[#f97316] transition-all">
-																<span className="flex-1 text-left flex items-center gap-2">
+																<span className="flex-1 text-left">
 																	{item.label}
-																	<span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-orange-100 text-[#f97316]">
-																		{item.children.length}
-																	</span>
 																</span>
 															</AccordionTrigger>
 
@@ -450,8 +447,8 @@ const Navbar = () => {
 									</ul>
 								</div>
 
-								{/* Bottom Action & Contact Area */}
-								<div className="p-4 border-t border-gray-100 bg-gray-50/80 space-y-3">
+								{/* Bottom Action Area */}
+								<div className="p-4 border-t border-gray-100 bg-gray-50/80">
 									<Link href="/OEM_Collaborators" onClick={() => setOpen(false)} className="block">
 										<button
 											type="button"
@@ -462,25 +459,6 @@ const Navbar = () => {
 											<ArrowRight size={15} className="ml-auto" />
 										</button>
 									</Link>
-
-									<div className="flex items-center justify-around pt-1 text-xs text-gray-500">
-										<Link
-											href="/contact"
-											onClick={() => setOpen(false)}
-											className="flex items-center gap-1.5 hover:text-[#f97316] transition-colors"
-										>
-											<Phone size={13} className="text-[#f97316]" />
-											<span>Contact Us</span>
-										</Link>
-										<span className="text-gray-300">|</span>
-										<a
-											href="mailto:info@safetyprojects.co.in"
-											className="flex items-center gap-1.5 hover:text-[#f97316] transition-colors"
-										>
-											<Mail size={13} className="text-[#f97316]" />
-											<span>Email Sales</span>
-										</a>
-									</div>
 								</div>
 							</SheetContent>
 						</Sheet>
