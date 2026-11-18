@@ -118,7 +118,7 @@ export default function ContactFormModal({ trigger }) {
                 {/* Header */}
                 <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
                   <div>
-                    <h2 className="text-2xl font-bold text-[#d42225]">Get In Touch</h2>
+                    <h2 className="text-2xl font-bold text-[#f97316]">Get In Touch</h2>
                     <p className="text-sm text-gray-500 mt-0.5">We'd love to hear from you!</p>
                   </div>
                   <button
@@ -133,15 +133,15 @@ export default function ContactFormModal({ trigger }) {
                 {/* Quick contact info strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 px-6 py-4 bg-gray-50 border-b border-gray-100 text-xs text-gray-600">
                   <div className="flex items-center gap-1.5">
-                    <Mail className="h-3.5 w-3.5 text-[#d42225] shrink-0" />
+                    <Mail className="h-3.5 w-3.5 text-[#f97316] shrink-0" />
                     <span className="truncate">info@safetyprojects.co.in</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <Phone className="h-3.5 w-3.5 text-[#d42225] shrink-0" />
+                    <Phone className="h-3.5 w-3.5 text-[#f97316] shrink-0" />
                     <span>+91 22 61749999</span>
                   </div>
                   <div className="flex items-center gap-1.5 col-span-2 sm:col-span-1">
-                    <MapPinned className="h-3.5 w-3.5 text-[#d42225] shrink-0" />
+                    <MapPinned className="h-3.5 w-3.5 text-[#f97316] shrink-0" />
                     <span className="truncate">Kandivali (E), Mumbai – 400101</span>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function ContactFormModal({ trigger }) {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d42225] text-sm"
+                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f97316] text-sm"
                       />
                     </div>
                     <div>
@@ -168,7 +168,7 @@ export default function ContactFormModal({ trigger }) {
                         placeholder="Your Company Name"
                         value={formData.company}
                         onChange={handleChange}
-                        className="w-full text-black  px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d42225] text-sm"
+                        className="w-full text-black  px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f97316] text-sm"
                       />
                     </div>
                     <div>
@@ -179,7 +179,7 @@ export default function ContactFormModal({ trigger }) {
                         placeholder="Your Phone Number"
                         value={formData.Phone}
                         onChange={handleChange}
-                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d42225] text-sm"
+                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f97316] text-sm"
                       />
                     </div>
                     <div>
@@ -190,7 +190,7 @@ export default function ContactFormModal({ trigger }) {
                         placeholder="Your Email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d42225] text-sm"
+                        className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f97316] text-sm"
                       />
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export default function ContactFormModal({ trigger }) {
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d42225] text-sm resize-none"
+                      className="w-full text-black px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f97316] text-sm resize-none"
                     />
                   </div>
                   <div className="pt-1">

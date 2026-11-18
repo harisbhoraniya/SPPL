@@ -510,7 +510,7 @@ export default function OEMCollaborators() {
 
       <ContainerSection>
         <div className="flex flex-col bg-white shadow-lg rounded-lg overflow-hidden p-4 md:p-8 lg:p-16 space-y-4 ">
-          <HeaderText className={"text-[#d42225] text-center"}>
+          <HeaderText className={"text-[#f97316] text-center"}>
             Let's Collaborate
           </HeaderText>
           <BodyCopyText className={"text-gray-600 text-center"}>
@@ -531,7 +531,7 @@ export default function OEMCollaborators() {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"
               />
             </div>
             <div>
@@ -542,7 +542,7 @@ export default function OEMCollaborators() {
                 placeholder="Your Company Name"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"
               />
             </div>
             <div>
@@ -553,7 +553,7 @@ export default function OEMCollaborators() {
                 placeholder="Your Phone Number"
                 value={formData.Phone}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"
               />
             </div>
             <div>
@@ -564,7 +564,7 @@ export default function OEMCollaborators() {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"
               />
             </div>
             <div>
@@ -575,7 +575,7 @@ export default function OEMCollaborators() {
                 placeholder="Tell us about your products and collaboration interest"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"
+                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"
               ></textarea>
             </div>
             <div className="w-full">

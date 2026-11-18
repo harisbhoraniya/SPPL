@@ -613,11 +613,11 @@ export default function FallArrest() {
               >
                 <Popover>
                   <PopoverTrigger className="relative">
-                    <div className="w-2 md:w-4 h-2 md:h-4 bg-[#d42225] rounded-full animate-ping absolute"></div>
-                    <div className="w-2 md:w-4 h-2 md:h-4 bg-[#d42225] rounded-full"></div>
+                    <div className="w-2 md:w-4 h-2 md:h-4 bg-[#f97316] rounded-full animate-ping absolute"></div>
+                    <div className="w-2 md:w-4 h-2 md:h-4 bg-[#f97316] rounded-full"></div>
                   </PopoverTrigger>
                   <PopoverContent className="mt-2 p-2 text-sm w-fit">
-                    <span className="font-semibold text-[#d42225]">
+                    <span className="font-semibold text-[#f97316]">
                       {point.content}
                     </span>
                   </PopoverContent>

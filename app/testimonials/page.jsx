@@ -101,7 +101,7 @@ export default function TestimonialPage() {
                   <div className="text-right">
                     <Link
                       href="/testimonials"
-                      className="text-gray-400 font-medium text-sm hover:text-[#d42225]"
+                      className="text-gray-400 font-medium text-sm hover:text-[#f97316]"
                     >
                       Read More
                     </Link>

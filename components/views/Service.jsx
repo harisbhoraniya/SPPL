@@ -86,7 +86,7 @@ const ServicesSection = () => {
 									>
 										<div className="flex items-center gap-4">
 											{/* Icon */}
-											<div className="text-red-600 ">
+											<div className="text-[#f97316] ">
 												<Image
 													src={service.icon}
 													alt={service.title}
@@ -115,7 +115,7 @@ const ServicesSection = () => {
 										</div>
 
 										{/* Arrow */}
-										<span className="text-red-600  text-2xl ml-auto">
+										<span className="text-[#f97316]  text-2xl ml-auto">
 											<ArrowRight />
 										</span>
 									</Link>

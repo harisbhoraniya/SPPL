@@ -48,11 +48,11 @@ export default function NotFound() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
 			<div className="text-center p-6">
-				<h1 className="text-5xl font-bold mb-4 text-[#d42225]">🚧 Under Construction 🚧</h1>
+				<h1 className="text-5xl font-bold mb-4 text-[#f97316]">🚧 Under Construction 🚧</h1>
 				<p className="text-lg text-gray-600 mb-6">
 					We're working hard to bring this page to life. Please check back soon!
 				</p>
-				<Link href="/" className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition">
+				<Link href="/" className="px-6 py-3 bg-[#f97316] text-white font-semibold rounded-lg shadow-lg hover:bg-[#ea580c] transition">
 					Go Back to Home
 
 				</Link>

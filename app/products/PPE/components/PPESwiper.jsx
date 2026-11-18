@@ -31,7 +31,7 @@ export default function PPESwiper({data}) {
         speed={1500}
         className="h-full"
         style={{
-          "--swiper-pagination-color": "#d42225",
+          "--swiper-pagination-color": "#f97316",
           "--swiper-pagination-bullet-size": "5px",
           "--swiper-pagination-bottom": "-6px",
         }}
@@ -48,7 +48,7 @@ export default function PPESwiper({data}) {
                   alt={item.title}
                   className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-[#d42225]  opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-[#f97316]  opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                   <BodyCopyText className=" text-[12px] w-full uppercase text-white text-center font-bold px-4">
                     {item.title}

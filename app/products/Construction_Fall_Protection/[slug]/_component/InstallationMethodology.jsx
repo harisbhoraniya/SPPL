@@ -23,7 +23,7 @@ const InstallationMethodologySection = ({ InstallationMethodology }) => {
             spaceBetween={12}
             slidesPerView={1}
             pagination={{ clickable: true }}
-            className="overflow-hidden border-red-500 border-1 h-full"
+            className="overflow-hidden h-full"
           >
             {InstallationMethodology.Methods.map((method, index) => (
               <SwiperSlide key={index} className="p-4 h-full ">

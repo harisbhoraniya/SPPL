@@ -218,31 +218,31 @@ export default function ContactUs() {
 								<label className="block text-gray-600">Name</label>
 								<input type="text" name="name" placeholder="Your Name"
 									value={formData.name} onChange={handleChange}
-									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]" />
+									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
 							</div>
 							<div>
 								<label className="block text-gray-600">Company Name</label>
 								<input type="text" name="company" placeholder="Your Company Name"
 									value={formData.company} onChange={handleChange}
-									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]" />
+									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
 							</div>
 							<div>
 								<label className="block text-gray-600">Phone</label>
 								<input type="text" name="Phone" placeholder="Your Phone Number"
 									value={formData.Phone} onChange={handleChange}
-									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]" />
+									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
 							</div>
 							<div>
 								<label className="block text-gray-600">Email</label>
 								<input type="text" name="email" placeholder="Your Email"
 									value={formData.email} onChange={handleChange}
-									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]" />
+									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]" />
 							</div>
 							<div>
 								<label className="block text-gray-600">Message</label>
 								<textarea name="message" rows={4} placeholder="Your Message"
 									value={formData.message} onChange={handleChange}
-									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#d42225]"></textarea>
+									className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#f97316]"></textarea>
 							</div>
 							<div className="w-full">
 								<AnimatedButton text={"Send Message"} className={"duration-1000"} />

@@ -71,7 +71,7 @@ export default function Nomenclature({
                     className="h-20 w-20 object-center object-cover"
                   />
                 )}
-                <BodyCopyText className="hover:text-[#d42225]">{button.content}</BodyCopyText>
+                <BodyCopyText className="hover:text-[#f97316]">{button.content}</BodyCopyText>
               </PopoverContent>
             </Popover>
           </div>

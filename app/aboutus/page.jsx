@@ -67,7 +67,7 @@ export default function AboutUs() {
 
 							<BodyCopyText onClick={() => {
 								setDisplayText((prev) => !prev)
-							}} className={"cursor-pointer text-gray-400 hover:text-[#d42225]"}>
+							}} className={"cursor-pointer text-gray-400 hover:text-[#f97316]"}>
 								{displayText ? "Hide" : "Read More..."}
 							</BodyCopyText>
 
@@ -113,7 +113,7 @@ export default function AboutUs() {
 							}
 							<BodyCopyText onClick={() => {
 								setDisplayText((prev) => !prev)
-							}} className={"cursor-pointer text-gray-400 hover:text-[#d42225]"}>
+							}} className={"cursor-pointer text-gray-400 hover:text-[#f97316]"}>
 								{displayText ? "Hide" : "Read More..."}
 							</BodyCopyText>
 

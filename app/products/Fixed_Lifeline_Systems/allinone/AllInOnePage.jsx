@@ -699,7 +699,7 @@ export default function InteractiveImagePage() {
                 />
               </div>
               <h3 className="mt-4 text-[16px] md:text-[18px] font-bold font-raleway">
-                <span className="text-red-500">1. Energy Absorber</span>
+                <span className="text-[#f97316]">1. Energy Absorber</span>
               </h3>
               <p className="text-gray-700 text-[13px] md:text-[14px] mt-2 font-raleway leading-relaxed">
                 A device designed to dissipate and reduce the forces generated during
@@ -719,7 +719,7 @@ export default function InteractiveImagePage() {
                 />
               </div>
               <h3 className="mt-4 text-[16px] md:text-[18px] font-bold font-raleway">
-                <span className="text-red-500">2. Tensioner</span>
+                <span className="text-[#f97316]">2. Tensioner</span>
               </h3>
               <p className="text-gray-700 text-[13px] md:text-[14px] mt-2 font-raleway leading-relaxed">
                 A tensioner is used to keep the horizontal lifeline taut and at the
@@ -739,7 +739,7 @@ export default function InteractiveImagePage() {
                 />
               </div>
               <h3 className="mt-4 text-[16px] md:text-[18px] font-bold font-raleway">
-                <span className="text-red-500">3. Tension Indicator</span>
+                <span className="text-[#f97316]">3. Tension Indicator</span>
               </h3>
               <p className="text-gray-700 text-[13px] md:text-[14px] mt-2 font-raleway leading-relaxed">
                 A tension indicator helps ensure that the lifeline remains properly
@@ -762,7 +762,7 @@ export default function InteractiveImagePage() {
                 />
               </div>
               <h3 className="mt-4 text-[16px] md:text-[18px] font-bold font-raleway">
-                <span className="text-red-500">4. Fall Indicator</span>
+                <span className="text-[#f97316]">4. Fall Indicator</span>
               </h3>
               <p className="text-gray-700 text-[13px] md:text-[14px] mt-2 font-raleway leading-relaxed">
                 A fall indicator is a mechanism that triggers an alert when a fall occurs.
@@ -780,7 +780,7 @@ export default function InteractiveImagePage() {
                 />
               </div>
               <h3 className="mt-4 text-[16px] md:text-[18px] font-bold font-raleway">
-                <span className="text-red-500">5. End Cable Termination</span>
+                <span className="text-[#f97316]">5. End Cable Termination</span>
               </h3>
               <p className="text-gray-700 text-[13px] md:text-[14px] mt-2 font-raleway leading-relaxed">
                 The end cable termination is the way of anchoring the horizontal

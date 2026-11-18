@@ -255,7 +255,7 @@ const Footer = () => {
 						Develop by -{" "}
 						<Link
 								href="https://www.r5advertising.com/"
-							className="text-red-600 hover:text-white transition"
+							className="text-[#f97316] hover:text-white transition"
 							target="_blank"
 							rel="noopener noreferrer"
 						>

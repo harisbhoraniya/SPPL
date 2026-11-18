@@ -118,7 +118,7 @@ export default async function ProjectPage({ params }) {
                           <tr key={index} className={`grid grid-cols-2 ${index !== 0 ? 'border-t border-[#343a40]' : ''}`}>
                             <th
                               scope="row"
-                              className="text-left font-semibold p-2 bg-[#d42225] text-white border-r border-[#343a40]"
+                              className="text-left font-semibold p-2 bg-[#f97316] text-white border-r border-[#343a40]"
                             >
                               <BodyCopyText className="text-sm text-white">{key}</BodyCopyText>
                             </th>

@@ -75,7 +75,7 @@ export const Projects1 = ({ projects }) => {
 									className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
 								/>
 
-								<div className="absolute bottom-0 left-0 w-full h-16 bg-gray-700 bg-opacity-90 px-4 text-white py-4 transition-all duration-300 group-hover:bg-[#d42225] text-left">
+								<div className="absolute bottom-0 left-0 w-full h-16 bg-gray-700 bg-opacity-90 px-4 text-white py-4 transition-all duration-300 group-hover:bg-[#f97316] text-left">
 									<BodyCopyText className="text-white font-bold text-[15px]">
 										{project.title}
 									</BodyCopyText>

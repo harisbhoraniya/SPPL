@@ -8,12 +8,12 @@ export default function PPETechnicalSpecification({ data, leftHeader, rightHeade
     <table className="min-w-full h-fit bg-white">
       <thead>
         <tr>
-          <th className="px-2 md:px-6 py-2 md:py-4 text-left font-semibold border-r  border-b border-gray-300 bg-[#d42225]">
+          <th className="px-2 md:px-6 py-2 md:py-4 text-left font-semibold border-r  border-b border-gray-300 bg-[#f97316]">
             <BodyCopyText className="text-white">
               {leftHeader}
             </BodyCopyText>
           </th>
-          <th className="px-2 md:px-6 py-2 md:py-4 text-left font-semibold  border-b border-gray-300 bg-[#d42225]">
+          <th className="px-2 md:px-6 py-2 md:py-4 text-left font-semibold  border-b border-gray-300 bg-[#f97316]">
             <BodyCopyText className={"text-white"}>{rightHeader}</BodyCopyText>
           </th>
         </tr>

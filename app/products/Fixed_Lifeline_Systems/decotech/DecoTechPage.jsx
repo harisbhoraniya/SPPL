@@ -649,7 +649,7 @@ xl:-ml-[120px]
           >
             <h2 className="text-[30px] md:text-[34px] lg:text-[40px] font-raleway font-bold leading-tight">
               Fall Protection <br />
-              From <span className="text-red-500">Any Angle</span>
+              From <span className="text-[#f97316]">Any Angle</span>
             </h2>
             <p className="mt-6 text-gray-700 font-raleway leading-relaxed text-[15px] md:text-[16px]">
               Regardless of the direction or angle from which a fall occurs,
@@ -699,7 +699,7 @@ xl:-ml-[120px]
           >
             <h2 className="text-[30px] md:text-[34px] lg:text-[40px] font-bold font-raleway leading-tight mt-6 lg:mt-0">
               Roof Integrity With <br />
-              <span className="text-red-500">DecoTECH™</span>
+              <span className="text-[#f97316]">DecoTECH™</span>
             </h2>
 
             <p className="mt-6 text-gray-700 font-raleway leading-relaxed text-[15px] md:text-[16px]">
@@ -796,7 +796,7 @@ xl:-ml-[120px]
           <div className="mt-8 max-w-[700px] mx-auto text-center mb-10">
 
             <h2 className="text-[40px] font-bold font-raleway">
-              Dynamic <span className="text-red-500 font-raleway">Drop Test</span>
+              Dynamic <span className="text-[#f97316] font-raleway">Drop Test</span>
             </h2>
 
             <p className="mt-4  text-[18px] font-raleway">

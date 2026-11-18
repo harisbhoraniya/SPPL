@@ -100,7 +100,7 @@ export const ConstructionFallProtection = [
       },
       {
         name: "5+ Years Strong Life & Reusability",
-        image: "/img/Products/Construction Fall Protections/Safety Net Fan System/03 Features and Advantages/12 5+ Years Strong Life & Reusability.gif",
+        image: "/img/Products/Construction Fall Protections/Safety Net Fan System/03 Features and Advantages/12 5 Plus Years Strong Life _ Reusability.gif",
       },
       {
         name: "Project Aesthetics Level Up",
